@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What's Coming — Earthwalk Allies</title>
+  <meta name="description" content="A quiet preview of what we are building — retreats, a card deck, a podcast, free teachings, and one-of-a-kind art." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a href="index.html" class="brand"><span class="brand__mark"></span>Earthwalk Allies</a>
+      <button class="nav-toggle" aria-label="Open menu" onclick="document.querySelector('.nav').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="whats-coming.html" class="is-active">What's Coming</a>
+        <a href="stories.html">Stories</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== Page intro ====== -->
+  <section class="section section--plum">
+    <div class="narrow reveal">
+      <p class="eyebrow">What's coming</p>
+      <h1>A few doors, opening at their own pace.</h1>
+      <p class="lede">We are building slowly and shaping offerings with purpose.</p>
+      <p>Here is what we are working on. None of it is rushed. If something here calls to you, the best thing you can do is <a href="index.html#waitlist">leave your name</a>; we'll write when there is something real to share.</p>
+    </div>
+  </section>
+
+  <!-- ====== Offerings list ====== -->
+  <section class="section section--tight">
+    <div class="wrap" style="display: grid; grid-template-columns: 1fr auto; gap: clamp(2rem, 5vw, 5rem); align-items: stretch;">
+      <div class="offerings">
+
+        <div class="offering reveal">
+          <span class="offering__num">i.</span>
+          <div>
+            <h3>Virtual group sessions</h3>
+            <p>Come together, feel the energy, and learn how to begin (or get better at) relating to spirits in the natural world — asking questions and knowing how to interpret signs.</p>
+          </div>
+          <span class="offering__status">In planning</span>
+        </div>
+
+        <div class="offering reveal">
+          <span class="offering__num">ii.</span>
+          <div>
+            <h3>The podcast</h3>
+            <p>Conversations about what people noticed, felt, and what they did with it. Reverent discussion about peak moments when spirit guidance was life-changing.</p>
+          </div>
+          <span class="offering__status">In development</span>
+        </div>
+
+        <div class="offering reveal">
+          <span class="offering__num">iii.</span>
+          <div>
+            <h3>Card deck for interconnection</h3>
+            <p>A tangible tool for everyday life. You have an innate ability to recognize signs from spirit allies and interpret their meaning. Use this deck to learn how to rebuild or strengthen this knowing.</p>
+          </div>
+          <span class="offering__status">In design</span>
+        </div>
+
+      </div>
+
+      <figure class="reveal" style="margin: 0; width: clamp(160px, 22vw, 300px); overflow: hidden;">
+        <img src="assets/images/IMG_6792.jpeg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; border: 1px solid var(--rule);" />
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ====== Quiet image band ====== -->
+  <!-- ====== Inline waitlist ====== -->
+  <section class="door section" id="waitlist" style="background-image: url('assets/images/EA1D9E31-B2BD-4517-BFEB-9C27EB6B8D57.jpeg'); background-size: cover; background-position: center 50%; position: relative;">
+    <div class="wrap door__inner">
+      <div class="reveal" style="position: relative; z-index: 1;">
+        <p class="eyebrow" style="color: rgba(244,238,226,0.9);">An open door</p>
+        <h2 style="color: var(--parchment);">Be among the first to know.</h2>
+        <p style="color: var(--parchment);">Leave your name and we'll let you know as each offering arrives. No noise. No pressure. Only what's worth your attention.</p>
+      </div>
+      <form class="door__form" style="position: relative; z-index: 1;" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Thank you. Your name is here.'; this.querySelector('input').value='';">
+        <div>
+          <label for="email" style="color: var(--parchment);">Your email</label>
+          <input id="email" type="email" required placeholder="you@somewhere.earth" />
+        </div>
+        <div class="door__row">
+          <div>
+            <label for="name" style="color: var(--parchment);">Your first name (optional)</label>
+            <input id="name" type="text" placeholder="" />
+          </div>
+          <button type="submit" class="btn">Tune in</button>
+        </div>
+        <p class="door__note" style="color: rgba(244,238,226,0.8);">No noise, no pressure. Unsubscribe whenever you'd like.</p>
+      </form>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <a href="index.html" class="brand"><span class="brand__mark"></span>Earthwalk Allies</a>
+      <p class="muted">Everything has a spirit you were born to know.</p>
+      <small>&copy; 2026 Earthwalk Allies</small>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

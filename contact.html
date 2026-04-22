@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Earthwalk Allies</title>
+  <meta name="description" content="Reach Earthwalk Allies — for retreat inquiries, press, collaborations, or simply to be in touch." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a href="index.html" class="brand"><span class="brand__mark"></span>Earthwalk Allies</a>
+      <button class="nav-toggle" aria-label="Open menu" onclick="document.querySelector('.nav').classList.toggle('is-open')">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="whats-coming.html">What's Coming</a>
+        <a href="stories.html">Stories</a>
+        <a href="contact.html" class="is-active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== Page intro ====== -->
+  <section class="page-hero" style="background-image: url('assets/images/IMG_7974.JPG');">
+    <div class="narrow reveal">
+      <p class="eyebrow">Contact</p>
+      <h1>Say hello.</h1>
+      <p class="lede">For retreat inquiries, press, collaborations, or simply to be in touch — write us. We read every note.</p>
+    </div>
+  </section>
+
+  <!-- ====== Form + direct ====== -->
+  <section class="section section--tight">
+    <div class="wrap door__inner">
+      <div class="reveal">
+        <p class="eyebrow">Direct</p>
+        <h3 class="serif" style="font-weight: 360;">A quieter path.</h3>
+        <p>If you'd rather skip the form, you can reach us at:</p>
+        <p class="serif italic" style="font-size: 1.2rem; color: var(--ink);"><a href="mailto:hello@earthwalkallies.com">hello@earthwalkallies.com</a></p>
+
+        <p style="margin-top: 2.5rem;" class="muted small">For retreats specifically, please use the form so we can route your note. We typically reply within a week. We do not work weekends.</p>
+      </div>
+
+      <form class="door__form reveal" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Received. Thank you. We will be in touch.'; this.reset();">
+        <div>
+          <label for="cname">Your name</label>
+          <input id="cname" type="text" required />
+        </div>
+        <div>
+          <label for="cemail">Your email</label>
+          <input id="cemail" type="email" required />
+        </div>
+        <div>
+          <label for="ctopic">What is this about?</label>
+          <input id="ctopic" type="text" placeholder="Retreat inquiry, press, collaboration, hello..." />
+        </div>
+        <div>
+          <label for="cmsg">Your message</label>
+          <textarea id="cmsg" required></textarea>
+        </div>
+        <div style="display: flex; justify-content: flex-end;">
+          <button type="submit" class="btn">Send</button>
+        </div>
+        <p class="door__note"></p>
+      </form>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <a href="index.html" class="brand"><span class="brand__mark"></span>Earthwalk Allies</a>
+      <p class="muted">Everything has a spirit you were born to know.</p>
+      <small>&copy; 2026 Earthwalk Allies</small>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
