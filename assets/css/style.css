@@ -462,7 +462,8 @@ label {
 .story--photo .story__caption { padding: 0.9rem 0.2rem; font-family: var(--serif); font-style: italic; color: var(--ink); }
 
 /* ---------- About / bios ---------- */
-.bios { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.bios { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: stretch; }
+.bio { display: flex; flex-direction: column; }
 @media (max-width: 800px) { .bios { grid-template-columns: 1fr; } }
 .bio__photo {
   background: var(--paper-deep);
