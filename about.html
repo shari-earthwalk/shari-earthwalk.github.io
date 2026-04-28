@@ -87,33 +87,6 @@
     </div>
   </section>
 
-  <!-- ====== Clarification green band ====== -->
-  <section style="background: #78BC61; padding: clamp(2rem, 4vw, 3rem) 1.5rem;">
-    <div style="max-width: 56rem; margin: 0 auto; text-align: center;">
-      <p style="font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--parchment); margin: 0 0 1.25rem; font-weight: 500; max-width: none;">Is this channeling?</p>
-      <button onclick="
-        var s = document.getElementById('clair-story');
-        var b = this;
-        if (s.style.maxHeight === '0px' || s.style.maxHeight === '') {
-          s.style.maxHeight = s.scrollHeight + 'px';
-          s.style.opacity = '1';
-          b.textContent = 'Close';
-        } else {
-          s.style.maxHeight = '0px';
-          s.style.opacity = '0';
-          b.textContent = 'Get clarification';
-        }
-      " style="background: var(--parchment); border: none; color: #3d5a30; font-family: var(--sans); font-size: 0.88rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.7em 1.8em; cursor: pointer; border-radius: 2rem; transition: background 0.2s;">Get clarification</button>
-
-      <div id="clair-story" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.6s ease, opacity 0.5s ease; margin-top: 0;">
-        <div style="max-width: 42rem; margin: 2rem auto 0; text-align: left;">
-          <p style="font-family: var(--serif); font-size: clamp(0.95rem, 1.3vw, 1.05rem); color: var(--parchment); line-height: 1.85; margin: 0 0 1.25rem;">Although Kristy is <span class="clair-term" data-def="Extrasensory visual perception">clairvoyant</span>, <span class="clair-term" data-def="Physical feelings without external stimuli">clairsentient</span>, <span class="clair-term" data-def="Auditory impressions the ear can't hear">clairaudient</span>, and <span class="clair-term" data-def="Intuitive knowing without logical explanation">claircognizant</span>, she is not here to channel or translate for you. She believes everyone was born with at least one &#x201C;clair,&#x201D; and her greatest passion is to empower others to learn to hone their own intuitive skills.</p>
-          <p style="font-family: var(--serif); font-size: clamp(0.95rem, 1.3vw, 1.05rem); color: var(--parchment); line-height: 1.85; margin: 0;">Earthwalk Allies helps you attune your radar for deepening your relationship with the natural world, including learning to recognize and interpret your own nature-spirit signs and messages.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ====== Founding story ====== -->
   <section class="section section--plum">
     <div class="narrow reveal">
