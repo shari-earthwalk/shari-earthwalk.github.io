@@ -13,7 +13,7 @@
   --ink:          #F4EEE2;   /* primary text — warm parchment */
   --ink-soft:     #DDD5C8;   /* body text */
   --ink-quiet:    #B8AFA6;   /* captions, metadata */
-  --moss:         #7A9E6E;   /* lightened moss for dark backgrounds */
+  --moss:         #89B6A5;   /* lightened moss for dark backgrounds */
   --moss-deep:    #5A7E50;
   --clay:         #C87A53;   /* warm clay */
   --sky-pale:     #C8D2CC;   /* whisper of sky */
@@ -275,21 +275,21 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   font-size: 0.82rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  padding: 1rem 1.6rem;
+  padding: 1rem 2rem;
   background: var(--ink);
   color: var(--paper);
-  border: 1px solid var(--ink);
-  border-radius: 0;
+  border: none;
+  border-radius: 2rem;
   cursor: pointer;
-  transition: background .25s ease, color .25s ease, border-color .25s ease;
+  transition: background .25s ease, color .25s ease;
 }
-.btn:hover { background: var(--moss-deep); border-color: var(--moss-deep); color: var(--paper); }
+.btn:hover { background: var(--moss-deep); color: var(--paper); }
 
-.btn--ghost { background: transparent; color: var(--ink); }
-.btn--ghost:hover { background: var(--ink); color: var(--paper); }
+.btn--ghost { background: var(--ink); color: var(--paper); }
+.btn--ghost:hover { background: var(--moss-deep); }
 
-.btn--light { background: transparent; color: var(--paper); border-color: rgba(244,238,226,0.7); }
-.btn--light:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.btn--light { background: var(--parchment); color: var(--plum); border: none; }
+.btn--light:hover { background: #fff; color: var(--plum); }
 
 input[type="email"], input[type="text"], textarea {
   width: 100%;
