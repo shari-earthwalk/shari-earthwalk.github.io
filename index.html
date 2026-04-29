@@ -115,6 +115,35 @@
     </div>
   </section>
 
+  <!-- ====== Image band ====== -->
+  <div class="band" style="background-image: url('assets/images/IMG_2836.jpeg'); background-position: center 50%; height: 120px;"></div>
+
+  <!-- ====== The Door (waitlist) ====== -->
+  <section class="door section">
+    <div class="wrap door__inner">
+      <div class="reveal">
+        <p class="eyebrow">An open door</p>
+        <h2>We're preparing tools for you.</h2>
+        <p>Virtual group sessions, a podcast, a card deck — built slowly, with care.</p>
+        <p>If something in you is leaning forward, leave your name, and we'll write only when there is something worth saying. No noise.</p>
+      </div>
+      <form class="door__form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Thank you. Your name is here.'; this.querySelector('input').value='';">
+        <div>
+          <label for="email">Your email</label>
+          <input id="email" type="email" required placeholder="you@somewhere.earth" />
+        </div>
+        <div class="door__row">
+          <div>
+            <label for="name">Your first name (optional)</label>
+            <input id="name" type="text" placeholder="" />
+          </div>
+          <button type="submit" class="btn">Tune in</button>
+        </div>
+        <p class="door__note">No pressure. Unsubscribe whenever you'd like.</p>
+      </form>
+    </div>
+  </section>
+
   <!-- ====== Story wall teaser ====== -->
   <section class="section section--tight section--plum">
     <div class="wrap">
@@ -142,35 +171,6 @@
       </div>
 
       <p class="center" style="margin-top: 2rem;"><a href="stories.html" class="btn btn--light">Read more &amp; share yours</a></p>
-    </div>
-  </section>
-
-  <!-- ====== Image band ====== -->
-  <div class="band" style="background-image: url('assets/images/IMG_2836.jpeg'); background-position: center 50%; height: 120px;"></div>
-
-  <!-- ====== The Door (waitlist) ====== -->
-  <section class="door section">
-    <div class="wrap door__inner">
-      <div class="reveal">
-        <p class="eyebrow">An open door</p>
-        <h2>We're preparing what comes next.</h2>
-        <p>Virtual group sessions, a podcast, a card deck — built slowly, with care.</p>
-        <p>If something in you is leaning forward, leave your name, and we'll write only when there is something worth saying. No noise.</p>
-      </div>
-      <form class="door__form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Thank you. Your name is here.'; this.querySelector('input').value='';">
-        <div>
-          <label for="email">Your email</label>
-          <input id="email" type="email" required placeholder="you@somewhere.earth" />
-        </div>
-        <div class="door__row">
-          <div>
-            <label for="name">Your first name (optional)</label>
-            <input id="name" type="text" placeholder="" />
-          </div>
-          <button type="submit" class="btn">Tune in</button>
-        </div>
-        <p class="door__note">No pressure. Unsubscribe whenever you'd like.</p>
-      </form>
     </div>
   </section>
 
