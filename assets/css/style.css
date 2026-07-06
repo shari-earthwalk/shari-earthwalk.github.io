@@ -133,8 +133,8 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   display: inline-flex; align-items: center; gap: 0.75rem;
   transition: opacity .2s ease;
 }
-.brand__marks { height: 30px; width: 99px; display: block; flex-shrink: 0; }
-.brand__type  { height: 13px; width: 123px; display: block; flex-shrink: 0; }
+.brand__marks { height: 22px; width: 73px; display: block; flex-shrink: 0; }
+.brand__type  { height: 15px; width: 142px; display: block; flex-shrink: 0; }
 .brand:hover { opacity: 0.75; }
 
 .nav { display: flex; gap: clamp(1rem, 2.5vw, 2rem); align-items: center; }
@@ -176,7 +176,8 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  margin: 0 1.25rem; /* inset so gradient shows on sides */
+  margin: 0.75rem 1.25rem 0; /* gap below nav + side inset to show gradient */
+  border-radius: 8px 8px 0 0;
 }
 .hero__inner {
   position: relative;
@@ -531,8 +532,8 @@ label {
 .site-footer p, .site-footer small {
   font-size: 0.82rem; color: var(--ink-quiet); margin: 0;
 }
-.site-footer .brand__marks { height: 24px; width: 79px; }
-.site-footer .brand__type  { height: 11px; width: 104px; }
+.site-footer .brand__marks { height: 18px; width: 60px; }
+.site-footer .brand__type  { height: 13px; width: 123px; }
 
 /* ---------- Clair term tooltips ---------- */
 .clair-term {
