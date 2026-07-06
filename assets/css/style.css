@@ -176,19 +176,19 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   position: relative;
   min-height: 94vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   overflow: hidden;
-  margin: 0.5rem 4rem 0;       /* thin gap below nav; thick sides = gradient frame */
+  margin: 0.5rem 4rem 0;       /* thin gap below nav; thick sides = spruce frame */
   background: var(--paper);    /* spruce green shows as thin inner frame */
   border-radius: 12px 12px 0 0;
 }
 .hero__inner {
   position: relative;
   z-index: 2;
-  width: min(1200px, 100% - calc(var(--gutter) * 2));
-  margin-inline: auto;
-  padding-top: clamp(4rem, 8vw, 8rem);   /* nudge copy below true centre */
-  padding-bottom: clamp(2rem, 4vw, 4rem);
+  width: 100%;
+  padding-left: clamp(2rem, 6vw, 5.5rem);    /* clear the photo inset + provide proper indent */
+  padding-right: clamp(2rem, 5vw, 4rem);
+  padding-bottom: clamp(8rem, 18vh, 14rem);  /* lift copy into lower third of photo */
 }
 .hero__media {
   position: absolute;
@@ -270,6 +270,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
 }
 @media (max-width: 640px) {
   .hero { min-height: 88vh; margin: 0 0.75rem; }
+  .hero__inner { padding-left: 1.5rem; padding-right: 1.5rem; padding-bottom: 4rem; }
   .hero__copy { max-width: 100%; }
 }
 
