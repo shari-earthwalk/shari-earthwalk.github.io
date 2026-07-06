@@ -88,13 +88,13 @@
   </section>
 
   <!-- ====== Quiet image band ====== -->
-  <div class="band" style="background-image: url('assets/images/cactusblur.jpg'); background-position: center 50%;"></div>
+  <div class="band" style="background-image: url('assets/images/cactusblur.jpg'); background-position: center top; height: clamp(260px, 39vh, 450px);"></div>
 
   <!-- ====== Neuroscientist band ====== -->
   <section style="background: #113942; padding: clamp(2rem, 4vw, 3rem) 1.5rem; position: relative; overflow: hidden;">
-    <!-- Ripple as img (not background-image) so SVG clip-paths render correctly -->
+    <!-- Ripple as img (not background-image) so SVG clip-paths render correctly; wider than section so rings bleed off all edges -->
     <img src="assets/images/ripple-v1.svg" aria-hidden="true"
-         style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 70%; max-width: 620px; pointer-events: none; z-index: 0;" />
+         style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 130%; pointer-events: none; z-index: 0;" />
     <div style="position: relative; z-index: 1; max-width: 38rem; margin: 0 auto; text-align: center;">
       <p style="font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--sunrise); margin: 0 0 1.25rem; font-weight: 500;">Can science and spirit interconnect?</p>
       <button onclick="
