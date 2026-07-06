@@ -396,7 +396,7 @@ label {
 
 /* ---------- Plum contrast sections ---------- */
 .section--plum {
-  background: var(--plum);
+  background: linear-gradient(to bottom left, var(--moss), var(--plum));
 }
 .section--plum h1,
 .section--plum h2,
