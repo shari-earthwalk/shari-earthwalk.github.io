@@ -464,7 +464,7 @@ label {
   color: rgba(255, 248, 238, 0.88);
 }
 
-/* ---------- Teal (storm teal) sections ---------- */
+/* ---------- Teal (storm teal) sections — spruce text, soul green highlights ---------- */
 .section--teal {
   background: var(--moss-deep);
 }
@@ -479,16 +479,27 @@ label {
   color: rgba(17, 57, 66, 0.75);
 }
 .section--teal .eyebrow::before {
-  background: rgba(17, 57, 66, 0.45);
+  background: var(--moss);        /* soul green highlight */
 }
 .section--teal .muted {
   color: rgba(17, 57, 66, 0.65);
 }
+.section--teal a {
+  color: var(--moss);             /* soul green links */
+  border-color: rgba(114, 232, 173, 0.4);
+}
+.section--teal a:hover {
+  color: var(--moss);
+  border-color: var(--moss);
+}
 .section--teal .pillar__mark {
-  color: var(--sunrise);
+  color: var(--moss);             /* soul green icons */
 }
 .section--teal .pillar__rule {
-  background: rgba(17, 57, 66, 0.35);
+  background: var(--moss);        /* soul green rule */
+}
+.section--teal .story__ally {
+  color: var(--moss);             /* soul green ally labels */
 }
 
 /* ---------- Quiet image bands ---------- */
