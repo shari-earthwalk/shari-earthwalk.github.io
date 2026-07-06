@@ -40,19 +40,17 @@
 html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
-  border-top: 3px solid var(--moss);
   font-family: var(--serif);
   font-weight: 400;
   font-size: 17px;
   line-height: 1.65;
   color: var(--ink-soft);
-  background: var(--paper);
-  /* extremely faint paper texture via SVG noise */
+  background-color: var(--paper);
+  /* designer gradient: soul-green glow top-right, soil-maroon glow bottom-left */
   background-image:
-    radial-gradient(rgba(255,248,238,0.04) 1px, transparent 1px),
-    radial-gradient(rgba(255,248,238,0.025) 1px, transparent 1px);
-  background-size: 3px 3px, 7px 7px;
-  background-position: 0 0, 1px 2px;
+    radial-gradient(ellipse 80% 60% at 95% 0%,   rgba(114, 232, 173, 0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 65% 80% at  5% 100%, rgba(124,  82,  95, 0.55) 0%, transparent 60%);
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -178,6 +176,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   display: flex;
   align-items: flex-end;
   overflow: hidden;
+  margin: 0 1.25rem; /* inset so gradient shows on sides */
 }
 .hero__inner {
   position: relative;
@@ -236,8 +235,8 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   font-family: var(--serif);
   font-weight: 400;
   font-style: normal;
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
-  line-height: 1.15;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  line-height: 1.18;
   letter-spacing: 0em;
   color: var(--parchment);
   margin: 0 0 1.4rem;
@@ -246,12 +245,9 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  display: block;
-  font-size: clamp(2.8rem, 5.5vw, 5rem);
-  line-height: 1.08;
+  /* no display:block — flows naturally as part of the sentence */
   color: var(--moss);
   text-shadow: 0 1px 8px rgba(17, 57, 66, 0.6);
-  margin-top: 0.15em;
 }
 .hero__line {
   font-family: var(--sans);
@@ -264,7 +260,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   max-width: 42ch;
 }
 @media (max-width: 640px) {
-  .hero { min-height: 88vh; }
+  .hero { min-height: 88vh; margin: 0 0.75rem; }
   .hero__copy { max-width: 100%; }
 }
 
