@@ -393,9 +393,9 @@ label {
 .page-hero h1 { color: var(--parchment); }
 .page-hero .lede { color: rgba(255, 248, 238, 0.85); }
 
-/* ---------- Plum contrast sections ---------- */
+/* ---------- Plum (soil maroon) contrast sections ---------- */
 .section--plum {
-  background: var(--moss);
+  background: var(--plum);
 }
 .section--plum h1,
 .section--plum h2,
@@ -431,6 +431,65 @@ label {
 .section--plum .btn--light:hover {
   background: var(--parchment);
   color: var(--plum);
+}
+
+/* ---------- Moss (soul green) sections ---------- */
+.section--moss {
+  background: var(--moss);
+}
+.section--moss h1,
+.section--moss h2,
+.section--moss h3,
+.section--moss p,
+.section--moss .lede {
+  color: var(--paper);
+}
+.section--moss .eyebrow {
+  color: rgba(17, 57, 66, 0.75);
+}
+.section--moss .eyebrow::before {
+  background: rgba(17, 57, 66, 0.45);
+}
+.section--moss .muted {
+  color: rgba(17, 57, 66, 0.65);
+}
+.section--moss a {
+  color: var(--paper);
+  border-color: rgba(17, 57, 66, 0.35);
+}
+.section--moss a:hover {
+  color: var(--paper);
+  border-color: var(--paper);
+}
+.section--moss em {
+  color: rgba(17, 57, 66, 0.85);
+}
+
+/* ---------- Teal (storm teal) sections ---------- */
+.section--teal {
+  background: var(--moss-deep);
+}
+.section--teal h1,
+.section--teal h2,
+.section--teal h3,
+.section--teal p,
+.section--teal .lede {
+  color: var(--paper);
+}
+.section--teal .eyebrow {
+  color: rgba(17, 57, 66, 0.75);
+}
+.section--teal .eyebrow::before {
+  background: rgba(17, 57, 66, 0.45);
+}
+.section--teal .muted {
+  color: rgba(17, 57, 66, 0.65);
+}
+.section--teal .pillar__num {
+  color: var(--paper);
+}
+.section--teal .pillar__rule {
+  background: rgba(17, 57, 66, 0.35);
 }
 
 /* ---------- Quiet image bands ---------- */
