@@ -464,7 +464,7 @@ label {
   color: rgba(255, 248, 238, 0.88);
 }
 
-/* ---------- Teal (storm teal) sections — spruce text, soul green highlights ---------- */
+/* ---------- Teal (storm teal) sections ---------- */
 .section--teal {
   background: var(--moss-deep);
 }
@@ -479,27 +479,71 @@ label {
   color: rgba(17, 57, 66, 0.75);
 }
 .section--teal .eyebrow::before {
-  background: var(--moss);        /* soul green highlight */
+  background: rgba(17, 57, 66, 0.45);
 }
 .section--teal .muted {
   color: rgba(17, 57, 66, 0.65);
 }
-.section--teal a {
-  color: var(--moss);             /* soul green links */
-  border-color: rgba(114, 232, 173, 0.4);
-}
-.section--teal a:hover {
-  color: var(--moss);
-  border-color: var(--moss);
-}
 .section--teal .pillar__mark {
-  color: var(--moss);             /* soul green icons */
+  color: var(--sunrise);
 }
 .section--teal .pillar__rule {
-  background: var(--moss);        /* soul green rule */
+  background: rgba(17, 57, 66, 0.35);
 }
-.section--teal .story__ally {
-  color: var(--moss);             /* soul green ally labels */
+/* form elements on teal background */
+.section--teal label { color: rgba(17, 57, 66, 0.65); }
+.section--teal input[type="email"],
+.section--teal input[type="text"] {
+  color: var(--paper);
+  border-bottom-color: rgba(17, 57, 66, 0.30);
+}
+.section--teal input[type="email"]::placeholder,
+.section--teal input[type="text"]::placeholder { color: rgba(17, 57, 66, 0.40); }
+.section--teal input:focus,
+.section--teal textarea:focus { border-color: var(--paper); }
+.section--teal .door__note { color: rgba(17, 57, 66, 0.60); }
+.section--teal .btn { background: var(--paper); color: var(--sunrise); }
+.section--teal .btn:hover { background: var(--plum); color: var(--sunrise); }
+
+/* ---------- Photo-background sections (Three Truths) ---------- */
+.section--photo {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.section--photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 57, 66, 0.30);
+  z-index: 0;
+}
+.section--photo > .wrap {
+  position: relative;
+  z-index: 1;
+}
+.section--photo h1,
+.section--photo h2,
+.section--photo h3,
+.section--photo p,
+.section--photo .lede {
+  color: var(--sunrise);
+}
+.section--photo .eyebrow {
+  color: rgba(255, 248, 238, 0.72);
+}
+.section--photo .eyebrow::before {
+  background: rgba(255, 248, 238, 0.50);
+}
+.section--photo .muted {
+  color: rgba(255, 248, 238, 0.60);
+}
+.section--photo .pillar__mark {
+  color: var(--moss-deep);   /* storm teal icons */
+}
+.section--photo .pillar__rule {
+  background: rgba(255, 248, 238, 0.35);
 }
 
 /* ---------- Quiet image bands ---------- */
