@@ -152,7 +152,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
 .nav a.is-active { color: var(--ink); }
 .nav a.is-active::after {
   content: ""; position: absolute; left: 0; right: 0;
-  bottom: calc(-1.1rem - 8px); /* accounts for logo/nav height diff in centred flex layout */
+  bottom: calc(-1.1rem - 4px); /* accounts for logo/nav height diff in centred flex layout */
   height: 2px; background: var(--moss);
   z-index: 2;
 }
@@ -176,7 +176,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   position: relative;
   min-height: 94vh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   overflow: hidden;
   margin: 0.5rem 4rem 0;       /* thin gap below nav; thick sides = spruce frame */
   background: var(--paper);    /* spruce green shows as thin inner frame */
@@ -186,9 +186,8 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   position: relative;
   z-index: 2;
   width: 100%;
-  padding-left: clamp(2rem, 6vw, 5.5rem);    /* clear the photo inset + provide proper indent */
+  padding-left: clamp(2rem, 6vw, 5.5rem);   /* clear the photo inset + provide proper indent */
   padding-right: clamp(2rem, 5vw, 4rem);
-  padding-bottom: clamp(8rem, 18vh, 14rem);  /* lift copy into lower third of photo */
 }
 .hero__media {
   position: absolute;
@@ -396,7 +395,7 @@ label {
 
 /* ---------- Plum contrast sections ---------- */
 .section--plum {
-  background: linear-gradient(to bottom left, var(--moss), var(--plum));
+  background: linear-gradient(135deg, var(--moss) 0%, #1d4f4f 50%, var(--plum) 100%);
 }
 .section--plum h1,
 .section--plum h2,
