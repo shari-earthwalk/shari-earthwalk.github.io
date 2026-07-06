@@ -6,21 +6,23 @@
    ============================================================ */
 
 :root {
-  /* Earth-walked palette */
-  --paper:        #011638;   /* prussian blue — base background */
-  --paper-deep:   #011638;   /* secondary panels — matched to base */
-  --paper-shadow: #033070;   /* subtle dividers */
-  --ink:          #F4EEE2;   /* primary text — warm parchment */
+  /* Rimrock & Otter brand palette — five designer colors:
+     spruce green #113942 · soul green #72e8ad · soil maroon #7c525f
+     sunrise cream #fff8ee · storm teal #6fa3a3 (lives in --moss-deep) */
+  --paper:        #113942;   /* spruce green — base background */
+  --paper-deep:   #113942;   /* secondary panels — matched to base */
+  --paper-shadow: #0a2a31;   /* subtle dividers */
+  --ink:          #fff8ee;   /* primary text — sunrise cream */
   --ink-soft:     #DDD5C8;   /* body text */
   --ink-quiet:    #B8AFA6;   /* captions, metadata */
-  --moss:         #7AE188;   /* light green */
-  --moss-deep:    #5A7E50;
+  --moss:         #72e8ad;   /* soul green — vivid accent */
+  --moss-deep:    #6fa3a3;   /* storm teal — muted accent, button hovers, brand mark */
   --clay:         #C87A53;   /* warm clay */
-  --sky-pale:     #C8D2CC;   /* whisper of sky */
-  --rule:         rgba(244, 238, 226, 0.14);
-  --plum:         #775253;   /* chocolate plum — contrast sections */
-  --plum-deep:    #5D3D3E;
-  --parchment:    #F4EEE2;   /* constant warm parchment for plum sections */
+  --sky-pale:     #6fa3a3;   /* storm teal — secondary accent */
+  --rule:         rgba(255, 248, 238, 0.14);
+  --plum:         #7c525f;   /* soil maroon — contrast sections */
+  --plum-deep:    #5c3d47;
+  --parchment:    #fff8ee;   /* sunrise cream — constant warm tone for plum sections */
 
   /* Type — display is Century Gothic (with Jost as open-source web fallback for non-Mac/Win);
      body is Lora, a warm, humanist serif that pairs beautifully with geometric sans. */
@@ -46,8 +48,8 @@ body {
   background: var(--paper);
   /* extremely faint paper texture via SVG noise */
   background-image:
-    radial-gradient(rgba(244,238,226,0.04) 1px, transparent 1px),
-    radial-gradient(rgba(244,238,226,0.025) 1px, transparent 1px);
+    radial-gradient(rgba(255,248,238,0.04) 1px, transparent 1px),
+    radial-gradient(rgba(255,248,238,0.025) 1px, transparent 1px);
   background-size: 3px 3px, 7px 7px;
   background-position: 0 0, 1px 2px;
   -webkit-font-smoothing: antialiased;
@@ -117,7 +119,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0;
-  background: rgba(1, 22, 56, 0.94);
+  background: rgba(17, 57, 66, 0.94);
   backdrop-filter: saturate(120%) blur(10px);
   -webkit-backdrop-filter: saturate(120%) blur(10px);
   border-bottom: 1px solid var(--rule);
@@ -212,8 +214,8 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   background: linear-gradient(
     to bottom,
     transparent 30%,
-    rgba(1, 22, 56, 0.40) 70%,
-    rgba(1, 22, 56, 0.65) 100%
+    rgba(17, 57, 66, 0.40) 70%,
+    rgba(17, 57, 66, 0.65) 100%
   );
 }
 .hero__copy {
@@ -224,7 +226,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   font-size: 0.78rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(244, 238, 226, 0.7);
+  color: rgba(255, 248, 238, 0.7);
   margin: 0 0 1.2rem;
   display: inline-block;
 }
@@ -232,7 +234,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   content: "";
   display: inline-block;
   width: 28px; height: 1px;
-  background: rgba(244, 238, 226, 0.5);
+  background: rgba(255, 248, 238, 0.5);
   vertical-align: middle;
   margin-right: 0.85rem;
   margin-bottom: 3px;
@@ -251,14 +253,14 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   font-style: italic;
   font-weight: 500;
   color: var(--moss);
-  text-shadow: 0 1px 8px rgba(1, 22, 56, 0.6);
+  text-shadow: 0 1px 8px rgba(17, 57, 66, 0.6);
 }
 .hero__line {
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.2rem;
   line-height: 1.55;
-  color: rgba(244, 238, 226, 0.82);
+  color: rgba(255, 248, 238, 0.82);
   font-weight: 360;
   margin: 0;
   max-width: 42ch;
@@ -345,7 +347,7 @@ label {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(1, 22, 56, 0.20) 0%, rgba(1, 22, 56, 0.40) 100%);
+  background: linear-gradient(to bottom, rgba(17, 57, 66, 0.20) 0%, rgba(17, 57, 66, 0.40) 100%);
   z-index: 0;
 }
 .door__inner {
@@ -377,16 +379,16 @@ label {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 20%, rgba(1, 22, 56, 0.45) 65%, rgba(1, 22, 56, 0.70) 100%);
+  background: linear-gradient(to bottom, transparent 20%, rgba(17, 57, 66, 0.45) 65%, rgba(17, 57, 66, 0.70) 100%);
 }
 .page-hero .narrow {
   position: relative;
   z-index: 1;
   padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
 }
-.page-hero .eyebrow { color: rgba(244, 238, 226, 0.7); }
+.page-hero .eyebrow { color: rgba(255, 248, 238, 0.7); }
 .page-hero h1 { color: var(--parchment); }
-.page-hero .lede { color: rgba(244, 238, 226, 0.85); }
+.page-hero .lede { color: rgba(255, 248, 238, 0.85); }
 
 /* ---------- Plum contrast sections ---------- */
 .section--plum {
@@ -400,28 +402,28 @@ label {
   color: var(--parchment);
 }
 .section--plum .eyebrow {
-  color: rgba(244, 238, 226, 0.72);
+  color: rgba(255, 248, 238, 0.72);
 }
 .section--plum .eyebrow::before {
-  background: rgba(244, 238, 226, 0.5);
+  background: rgba(255, 248, 238, 0.5);
 }
 .section--plum .muted {
-  color: rgba(244, 238, 226, 0.6);
+  color: rgba(255, 248, 238, 0.6);
 }
 .section--plum a {
   color: var(--parchment);
-  border-color: rgba(244, 238, 226, 0.4);
+  border-color: rgba(255, 248, 238, 0.4);
 }
 .section--plum a:hover {
   color: var(--parchment);
   border-color: var(--parchment);
 }
 .section--plum em {
-  color: rgba(244, 238, 226, 0.88);
+  color: rgba(255, 248, 238, 0.88);
 }
 .section--plum .btn--light {
   color: var(--plum);
-  border-color: rgba(244, 238, 226, 0.6);
+  border-color: rgba(255, 248, 238, 0.6);
 }
 .section--plum .btn--light:hover {
   background: var(--parchment);
@@ -447,14 +449,14 @@ label {
 .story {
   break-inside: avoid;
   margin: 0 0 2rem;
-  background: rgba(244, 238, 226, 0.07);
-  border: 1px solid rgba(244, 238, 226, 0.18);
+  background: rgba(255, 248, 238, 0.07);
+  border: 1px solid rgba(255, 248, 238, 0.18);
   padding: 1.6rem 1.6rem 1.4rem;
   position: relative;
 }
 .story p { font-family: var(--serif); font-size: 1.05rem; line-height: 1.55; font-weight: 360; color: var(--parchment); margin: 0 0 1rem; font-style: italic; }
 .story footer { display: flex; justify-content: space-between; align-items: baseline;
-                font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,238,226,0.6); border-top: 1px solid rgba(244,238,226,0.15); padding-top: 0.9rem; }
+                font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,248,238,0.6); border-top: 1px solid rgba(255,248,238,0.15); padding-top: 0.9rem; }
 .story__ally { color: var(--moss); }
 
 .story--photo { padding: 0; border: 0; background: transparent; }
@@ -539,7 +541,7 @@ label {
 
 /* ---------- Clair term tooltips ---------- */
 .clair-term {
-  border-bottom: 1px dotted rgba(244, 238, 226, 0.55);
+  border-bottom: 1px dotted rgba(255, 248, 238, 0.55);
   cursor: help;
   position: relative;
   white-space: nowrap;
@@ -563,7 +565,7 @@ label {
   opacity: 0;
   transition: opacity 0.2s ease;
   z-index: 10;
-  border: 1px solid rgba(244, 238, 226, 0.15);
+  border: 1px solid rgba(255, 248, 238, 0.15);
 }
 .clair-term:hover::after { opacity: 1; }
 
