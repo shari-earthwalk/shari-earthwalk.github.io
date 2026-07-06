@@ -6,23 +6,23 @@
    ============================================================ */
 
 :root {
-  /* Rimrock & Otter brand palette — five designer colors:
+  /* Rimrock & Otter — five brand colors, used exclusively throughout:
      spruce green #113942 · soul green #72e8ad · soil maroon #7c525f
-     sunrise cream #fff8ee · storm teal #6fa3a3 (lives in --moss-deep) */
-  --paper:        #113942;   /* spruce green — base background */
-  --paper-deep:   #113942;   /* secondary panels — matched to base */
-  --paper-shadow: #0a2a31;   /* subtle dividers */
-  --ink:          #fff8ee;   /* primary text — sunrise cream */
-  --ink-soft:     #DDD5C8;   /* body text */
-  --ink-quiet:    #B8AFA6;   /* captions, metadata */
-  --moss:         #72e8ad;   /* soul green — vivid accent */
-  --moss-deep:    #6fa3a3;   /* storm teal — muted accent, button hovers, brand mark */
-  --clay:         #C87A53;   /* warm clay */
-  --sky-pale:     #6fa3a3;   /* storm teal — secondary accent */
-  --rule:         rgba(255, 248, 238, 0.14);
-  --plum:         #7c525f;   /* soil maroon — contrast sections */
-  --plum-deep:    #5c3d47;
-  --parchment:    #fff8ee;   /* sunrise cream — constant warm tone for plum sections */
+     storm teal #6fa3a3 · sunrise cream #fff8ee */
+  --paper:        #113942;                    /* spruce green — base background */
+  --paper-deep:   #113942;                    /* secondary panels */
+  --paper-shadow: #113942;                    /* dividers — spruce */
+  --ink:          #fff8ee;                    /* primary text — sunrise cream */
+  --ink-soft:     rgba(255, 248, 238, 0.80);  /* body text — sunrise cream 80% */
+  --ink-quiet:    rgba(255, 248, 238, 0.50);  /* muted text — sunrise cream 50% */
+  --moss:         #72e8ad;                    /* soul green — vivid accent */
+  --moss-deep:    #6fa3a3;                    /* storm teal — secondary accent */
+  --clay:         #6fa3a3;                    /* storm teal (clay retired) */
+  --sky-pale:     #6fa3a3;                    /* storm teal */
+  --rule:         rgba(255, 248, 238, 0.14);  /* sunrise cream at low opacity */
+  --plum:         #7c525f;                    /* soil maroon — contrast sections */
+  --plum-deep:    #7c525f;                    /* soil maroon (no deeper variant) */
+  --sunrise:    #fff8ee;   /* sunrise cream — warm light tone, brand name for this color */
 
   /* Type — headings in Lora (serif); body/UI in Century Gothic (Jost as open-source fallback) */
   --serif:  "Lora", Georgia, "Times New Roman", serif;
@@ -245,7 +245,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   font-size: clamp(2.6rem, 5vw, 4.4rem);
   line-height: 1.18;
   letter-spacing: 0em;
-  color: var(--parchment);
+  color: var(--sunrise);
   margin: 0 0 1.4rem;
 }
 .hero__tag em {
@@ -293,7 +293,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
 .btn--ghost { background: var(--ink); color: var(--paper); }
 .btn--ghost:hover { background: var(--moss-deep); }
 
-.btn--light { background: var(--parchment); color: var(--plum); border: none; }
+.btn--light { background: var(--sunrise); color: var(--plum); border: none; }
 .btn--light:hover { background: #fff; color: var(--plum); }
 
 input[type="email"], input[type="text"], textarea {
@@ -390,7 +390,7 @@ label {
   padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
 }
 .page-hero .eyebrow { color: rgba(255, 248, 238, 0.7); }
-.page-hero h1 { color: var(--parchment); }
+.page-hero h1 { color: var(--sunrise); }
 .page-hero .lede { color: rgba(255, 248, 238, 0.85); }
 
 /* ---------- Plum (soil maroon) contrast sections ---------- */
@@ -402,7 +402,7 @@ label {
 .section--plum h3,
 .section--plum p,
 .section--plum .lede {
-  color: var(--parchment);
+  color: var(--sunrise);
 }
 .section--plum .eyebrow {
   color: rgba(255, 248, 238, 0.72);
@@ -414,12 +414,12 @@ label {
   color: rgba(255, 248, 238, 0.6);
 }
 .section--plum a {
-  color: var(--parchment);
+  color: var(--sunrise);
   border-color: rgba(255, 248, 238, 0.4);
 }
 .section--plum a:hover {
-  color: var(--parchment);
-  border-color: var(--parchment);
+  color: var(--sunrise);
+  border-color: var(--sunrise);
 }
 .section--plum em {
   color: rgba(255, 248, 238, 0.88);
@@ -429,40 +429,40 @@ label {
   border-color: rgba(255, 248, 238, 0.6);
 }
 .section--plum .btn--light:hover {
-  background: var(--parchment);
+  background: var(--sunrise);
   color: var(--plum);
 }
 
-/* ---------- Moss (soul green) sections ---------- */
+/* ---------- Moss gradient sections (soul green → deep teal → soil maroon) ---------- */
 .section--moss {
-  background: var(--moss);
+  background: linear-gradient(135deg, var(--moss) 0%, #1d4f4f 50%, var(--plum) 100%);
 }
 .section--moss h1,
 .section--moss h2,
 .section--moss h3,
 .section--moss p,
 .section--moss .lede {
-  color: var(--paper);
+  color: var(--sunrise);
 }
 .section--moss .eyebrow {
-  color: rgba(17, 57, 66, 0.75);
+  color: rgba(255, 248, 238, 0.72);
 }
 .section--moss .eyebrow::before {
-  background: rgba(17, 57, 66, 0.45);
+  background: rgba(255, 248, 238, 0.5);
 }
 .section--moss .muted {
-  color: rgba(17, 57, 66, 0.65);
+  color: rgba(255, 248, 238, 0.6);
 }
 .section--moss a {
-  color: var(--paper);
-  border-color: rgba(17, 57, 66, 0.35);
+  color: var(--sunrise);
+  border-color: rgba(255, 248, 238, 0.4);
 }
 .section--moss a:hover {
-  color: var(--paper);
-  border-color: var(--paper);
+  color: var(--sunrise);
+  border-color: var(--sunrise);
 }
 .section--moss em {
-  color: rgba(17, 57, 66, 0.85);
+  color: rgba(255, 248, 238, 0.88);
 }
 
 /* ---------- Teal (storm teal) sections ---------- */
@@ -516,7 +516,7 @@ label {
   padding: 1.6rem 1.6rem 1.4rem;
   position: relative;
 }
-.story p { font-family: var(--serif); font-size: 1.05rem; line-height: 1.55; font-weight: 360; color: var(--parchment); margin: 0 0 1rem; font-style: italic; }
+.story p { font-family: var(--serif); font-size: 1.05rem; line-height: 1.55; font-weight: 360; color: var(--sunrise); margin: 0 0 1rem; font-style: italic; }
 .story footer { display: flex; justify-content: space-between; align-items: baseline;
                 font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,248,238,0.6); border-top: 1px solid rgba(255,248,238,0.15); padding-top: 0.9rem; }
 .story__ally { color: var(--moss); }
@@ -615,7 +615,7 @@ label {
   left: 50%;
   transform: translateX(-50%);
   background: var(--paper);
-  color: var(--parchment);
+  color: var(--sunrise);
   font-family: var(--serif);
   font-style: italic;
   font-size: 0.82rem;

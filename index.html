@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=11">
+  <link rel="stylesheet" href="assets/css/style.css?v=12">
 </head>
 <body>
 
@@ -94,9 +94,9 @@
   <section style="background: #113942; padding: clamp(2rem, 4vw, 3rem) 1.5rem; position: relative; overflow: hidden;">
     <!-- Ripple as img (not background-image) so SVG clip-paths render correctly -->
     <img src="assets/images/ripple-v1.svg" aria-hidden="true"
-         style="position: absolute; right: -2%; top: 50%; transform: translateY(-50%); width: 38%; max-width: 380px; pointer-events: none; z-index: 0;" />
+         style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 70%; max-width: 620px; pointer-events: none; z-index: 0;" />
     <div style="position: relative; z-index: 1; max-width: 38rem; margin: 0 auto; text-align: center;">
-      <p style="font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--parchment); margin: 0 0 1.25rem; font-weight: 500;">Can science and spirit interconnect?</p>
+      <p style="font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--sunrise); margin: 0 0 1.25rem; font-weight: 500;">Can science and spirit interconnect?</p>
       <button onclick="
         var s = document.getElementById('neuro-story');
         var b = this;
@@ -111,7 +111,7 @@
           s.style.marginTop = '0';
           b.textContent = 'Find out';
         }
-      " style="background: var(--parchment); border: none; color: var(--paper); font-family: var(--sans); font-size: 0.88rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.7em 1.8em; cursor: pointer; border-radius: 2rem; transition: background 0.2s;">Find out</button>
+      " style="background: var(--sunrise); border: none; color: var(--paper); font-family: var(--sans); font-size: 0.88rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.7em 1.8em; cursor: pointer; border-radius: 2rem; transition: background 0.2s;">Find out</button>
 
       <!-- Expands to soul green — dark spruce text for readability -->
       <div id="neuro-story" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.6s ease, opacity 0.5s ease, margin-top 0.3s ease; margin-top: 0; background: var(--moss); border-radius: 0.5rem;">
