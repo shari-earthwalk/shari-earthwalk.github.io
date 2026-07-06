@@ -131,11 +131,10 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
 }
 .brand {
   border: 0;
-  display: inline-flex; align-items: center; gap: 0.75rem;
+  display: inline-flex; align-items: center;
   transition: opacity .2s ease;
 }
-.brand__marks { height: 30px; width: 99px;  display: block; flex-shrink: 0; }
-.brand__type  { height: 22px; width: 209px; display: block; flex-shrink: 0; }
+.brand__logo  { height: 40px; width: 380px;  display: block; flex-shrink: 0; }
 .brand:hover { opacity: 0.75; }
 
 .nav { display: flex; gap: clamp(1rem, 2.5vw, 2rem); align-items: center; }
@@ -177,7 +176,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   position: relative;
   min-height: 94vh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   overflow: hidden;
   margin: 0.5rem 4rem 0;       /* thin gap below nav; thick sides = gradient frame */
   background: var(--paper);    /* spruce green shows as thin inner frame */
@@ -188,7 +187,8 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   z-index: 2;
   width: min(1200px, 100% - calc(var(--gutter) * 2));
   margin-inline: auto;
-  padding-bottom: clamp(3rem, 7vw, 6rem);
+  padding-top: clamp(4rem, 8vw, 8rem);   /* nudge copy below true centre */
+  padding-bottom: clamp(2rem, 4vw, 4rem);
 }
 .hero__media {
   position: absolute;
@@ -540,8 +540,7 @@ label {
 .site-footer p, .site-footer small {
   font-size: 0.82rem; color: var(--ink-quiet); margin: 0;
 }
-.site-footer .brand__marks { height: 18px; width: 60px; }
-.site-footer .brand__type  { height: 13px; width: 123px; }
+.site-footer .brand__logo  { height: 28px; width: 266px; }
 
 /* ---------- Clair term tooltips ---------- */
 .clair-term {
