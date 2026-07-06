@@ -329,15 +329,14 @@ label {
 }
 @media (max-width: 800px) { .pillars { grid-template-columns: 1fr; gap: 3rem; } }
 .pillar h3 { margin-top: 1.2rem; }
-.pillar__num {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1rem;
+.pillar__mark {
+  display: block;
+  height: 52px;
+  width: auto;
   color: var(--moss);
-  letter-spacing: 0.04em;
 }
 .pillar__rule {
-  width: 36px; height: 1px; background: var(--moss); margin-top: 0.6rem;
+  width: 36px; height: 1px; background: var(--moss); margin-top: 0.8rem;
 }
 
 /* ---------- Door (waitlist) ---------- */
@@ -485,8 +484,8 @@ label {
 .section--teal .muted {
   color: rgba(17, 57, 66, 0.65);
 }
-.section--teal .pillar__num {
-  color: var(--paper);
+.section--teal .pillar__mark {
+  color: var(--sunrise);
 }
 .section--teal .pillar__rule {
   background: rgba(17, 57, 66, 0.35);
