@@ -174,6 +174,9 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
     background: none; border: 0; padding: 8px; cursor: pointer; min-height: 44px;
   }
   .nav-toggle span { width: 24px; height: 2px; background: var(--ink); display: block; border-radius: 1px; }
+  /* Active-page indicator: desktop version drops below header — replace with left accent on mobile */
+  .nav a.is-active::after { display: none; }
+  .nav a.is-active { border-left: 2px solid var(--moss); padding-left: 0.6rem; color: var(--ink); }
 }
 
 /* ---------- Hero (full-bleed still image with overlay) ---------- */
