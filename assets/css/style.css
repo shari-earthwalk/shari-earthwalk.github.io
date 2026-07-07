@@ -178,9 +178,9 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   display: flex;
   align-items: center;
   overflow: hidden;
-  margin: 0;
+  margin: clamp(0.75rem, 1.5vw, 1.25rem);
   background: var(--paper);
-  border-radius: 0;
+  border-radius: 1.2rem;
 }
 .hero__inner {
   position: relative;
@@ -193,7 +193,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   position: absolute;
   inset: 0;
   z-index: 0;
-  border-radius: 0;
+  border-radius: 1.2rem;
   overflow: hidden;
 }
 .hero__media img {
@@ -208,7 +208,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 0;
+  border-radius: 1.2rem;
   z-index: 1;
   background: linear-gradient(
     to bottom,
@@ -583,7 +583,7 @@ label {
 .story--photo .story__caption { padding: 0.9rem 0.2rem; font-family: var(--serif); font-style: italic; color: var(--ink); }
 
 /* ---------- About / bios ---------- */
-.bios { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: stretch; }
+.bios { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: stretch; max-width: 900px; margin-inline: auto; }
 .bio { display: flex; flex-direction: column; }
 @media (max-width: 800px) { .bios { grid-template-columns: 1fr; } }
 .bio__photo {
