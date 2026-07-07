@@ -435,9 +435,8 @@ label {
 /* ---------- Moss gradient sections (brand gradient image — no CSS banding) ---------- */
 .section--moss {
   background-image: url('../images/gradient-bg.jpg');
-  background-size: 160% auto;
-  background-position: top left;
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 70% top;
   background-color: var(--paper); /* fallback */
 }
 .section--moss h1,
