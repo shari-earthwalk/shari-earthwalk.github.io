@@ -434,7 +434,7 @@ label {
 
 /* ---------- Moss gradient sections (soul green → deep teal → soil maroon) ---------- */
 .section--moss {
-  background: linear-gradient(135deg, var(--moss) 0%, #1d4f4f 50%, var(--plum) 100%);
+  background: linear-gradient(135deg, var(--moss) 0%, var(--paper) 18%, var(--plum) 75%, var(--paper) 100%);
 }
 .section--moss h1,
 .section--moss h2,
