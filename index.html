@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=14">
+  <link rel="stylesheet" href="assets/css/style.css?v=18">
 </head>
 <body>
 
@@ -205,15 +205,22 @@
   </section>
 
   <!-- ====== Story wall teaser ====== -->
-  <section class="section section--tight section--plum">
-    <div class="wrap">
-      <div class="narrow center" style="margin-bottom: 3rem;">
-        <p class="eyebrow">Signs from nature-spirit allies</p>
-        <h2>Stories of wonder and peak experiences</h2>
-        <p class="muted">Throughout your time on earth, there are spirit allies showing up for you. When you are tuned in, it's awe-inspiring — whether you have a powerful &#x201C;peak experience&#x201D; or a subtle moment of wonder.</p>
-        <p class="muted">Rimrock &amp; Otter helps you tune in and become your own interpreter of the signs.</p>
+  <section class="section section--tight section--plum" style="padding-top: clamp(0.75rem, 1.5vw, 1.25rem);">
+    <!-- Photo inset within maroon frame -->
+    <div style="padding: 0 clamp(0.75rem, 1.5vw, 1.25rem) clamp(2rem, 4vw, 3rem);">
+      <div style="position: relative; border-radius: 1.2rem; overflow: hidden; min-height: clamp(300px, 44vh, 520px); display: flex; align-items: center; max-width: 1200px; margin: 0 auto;">
+        <img src="assets/images/forestblur2.jpg" alt="Blurred forest with vertical light shafts"
+             style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(0.92) brightness(0.82);" />
+        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(17,57,66,0.72) 0%, rgba(17,57,66,0.30) 52%, transparent 78%);"></div>
+        <div style="position: relative; z-index: 1; padding: clamp(2rem, 5vw, 4rem);">
+          <p class="eyebrow" style="color: rgba(255,248,238,0.72);">Signs from nature-spirit allies</p>
+          <h2 style="color: var(--sunrise); max-width: 18ch;">Stories of wonder and peak experiences</h2>
+          <p style="font-family: var(--sans); font-size: clamp(0.95rem, 1.3vw, 1.05rem); color: rgba(255,248,238,0.82); max-width: 42ch; margin: 0 0 0.8em; line-height: 1.65;">Throughout your time on earth, there are spirit allies showing up for you. When you are tuned in, it&#x2019;s awe-inspiring &#x2014; whether you have a powerful &#x201C;peak experience&#x201D; or a subtle moment of wonder.</p>
+          <p style="font-family: var(--sans); font-size: clamp(0.95rem, 1.3vw, 1.05rem); color: rgba(255,248,238,0.82); max-width: 42ch; margin: 0; line-height: 1.65;">Rimrock &amp; Otter helps you tune in and become your own interpreter of the signs.</p>
+        </div>
       </div>
-
+    </div>
+    <div class="wrap">
       <div class="wall">
         <article class="story reveal">
           <p>The morning after my mother died, a great horned owl I had never seen before stayed on the porch railing for almost an hour. It looked at me. It did not blink. I cried into a coffee cup until it lifted off.</p>
