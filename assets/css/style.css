@@ -408,8 +408,36 @@ label {
   .add-yours-grid { grid-template-columns: 1fr; }
 }
 
+/* Form elements inside spruce boxes (dark bg — cream text) */
+.form-box--spruce label { color: var(--ink); }
+.form-box--spruce input[type="email"],
+.form-box--spruce input[type="text"],
+.form-box--spruce textarea {
+  color: var(--ink);
+  border-bottom-color: var(--rule);
+  background: transparent;
+}
+.form-box--spruce input[type="email"]::placeholder,
+.form-box--spruce input[type="text"]::placeholder,
+.form-box--spruce textarea::placeholder { color: var(--ink-quiet); }
+.form-box--spruce input:focus,
+.form-box--spruce textarea:focus { border-color: var(--moss); outline: none; }
+.form-box--spruce .door__note { color: var(--ink-quiet); }
+/* Override .section--teal cascade that makes labels/inputs dark-on-dark inside spruce box */
+.section--teal .form-box--spruce label { color: var(--ink); }
+.section--teal .form-box--spruce input[type="email"],
+.section--teal .form-box--spruce input[type="text"],
+.section--teal .form-box--spruce textarea { color: var(--ink); border-bottom-color: var(--rule); }
+.section--teal .form-box--spruce input[type="email"]::placeholder,
+.section--teal .form-box--spruce input[type="text"]::placeholder { color: var(--ink-quiet); }
+.section--teal .form-box--spruce input:focus,
+.section--teal .form-box--spruce textarea:focus { border-color: var(--moss); }
+.section--teal .form-box--spruce .door__note { color: var(--ink-quiet); }
+.section--teal .form-box--spruce .btn--moss { background: var(--moss); color: var(--paper); }
+.section--teal .form-box--spruce .btn--moss:hover { background: #5dd4a0; color: var(--paper); }
+
 /* Form elements inside teal boxes */
-.form-box--teal label { color: rgba(17, 57, 66, 0.72); }
+.form-box--teal label { color: var(--moss); }
 .form-box--teal input[type="email"],
 .form-box--teal input[type="text"],
 .form-box--teal textarea {
