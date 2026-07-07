@@ -279,6 +279,7 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   .hero { min-height: 88vh; margin: 0; }
   .hero__inner { padding-left: 2.5rem; padding-right: 2.5rem; padding-bottom: 4rem; }
   .hero__copy { max-width: 100%; }
+  .hero__tag { font-size: clamp(1.9rem, 7.5vw, 2.6rem); }
   .hero__tag em { display: inline; } /* flow italic inline after "spirit" on mobile */
 }
 
