@@ -432,9 +432,13 @@ label {
   color: var(--plum);
 }
 
-/* ---------- Moss gradient sections (soul green → deep teal → soil maroon) ---------- */
+/* ---------- Moss gradient sections (brand gradient image — no CSS banding) ---------- */
 .section--moss {
-  background: linear-gradient(135deg, var(--moss) 0%, var(--paper) 18%, var(--plum) 75%, var(--paper) 100%);
+  background-image: url('../images/gradient-bg.jpg');
+  background-size: 160% auto;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-color: var(--paper); /* fallback */
 }
 .section--moss h1,
 .section--moss h2,
