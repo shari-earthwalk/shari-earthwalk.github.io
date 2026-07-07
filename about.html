@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=19">
+  <link rel="stylesheet" href="assets/css/style.css?v=25">
 </head>
 <body>
 
@@ -117,7 +117,7 @@
   </section>
 
   <!-- ====== Why the name band ====== -->
-  <section style="background: #113942; min-height: clamp(260px, 39vh, 450px); display: flex; align-items: center; padding: clamp(2rem, 4vw, 3rem) 1.5rem; position: relative; overflow: hidden;">
+  <section style="background: #113942; min-height: clamp(260px, 39vh, 450px); display: flex; align-items: center; padding: clamp(2rem, 4vw, 3rem) 1.5rem; position: relative; overflow: hidden; clip-path: inset(0);">
     <img src="assets/images/ripple-v1.svg" aria-hidden="true"
          style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 130%; pointer-events: none; z-index: 0;" />
     <div style="position: relative; z-index: 1; max-width: 38rem; margin: 0 auto; text-align: center;">
@@ -149,7 +149,7 @@
   </section>
 
   <!-- ====== Founding story ====== -->
-  <section class="section" style="background-image: url('assets/images/gradient-v3-bg.jpg'); background-size: cover; background-position: center top;">
+  <section class="section" style="background-image: url('assets/images/gradient-v1-bg.svg'); background-size: cover; background-position: center bottom;">
     <div class="narrow reveal">
       <p class="eyebrow">The founding story</p>
       <h2>How we came together, and why now.</h2>
@@ -168,7 +168,7 @@
   </section>
 
   <!-- ====== Closing image band ====== -->
-  <div style="background-image: url('assets/images/joshuatop.jpg'); background-size: cover; background-position: center center; height: 280px;"></div>
+  <div style="background-image: url('assets/images/Pinkclouds.jpg'); background-size: cover; background-position: center center; height: 280px;"></div>
 
 
   <footer class="site-footer">
@@ -215,7 +215,7 @@
   <script>
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.05 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
 </body>

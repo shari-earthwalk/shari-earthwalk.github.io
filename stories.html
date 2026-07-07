@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=18">
+  <link rel="stylesheet" href="assets/css/style.css?v=25">
 </head>
 <body>
 
@@ -62,7 +62,7 @@
   </header>
 
   <!-- ====== Page intro ====== -->
-  <section style="background: var(--paper); padding: clamp(0.75rem, 1.5vw, 1.25rem);">
+  <section style="background: var(--plum); padding: clamp(0.75rem, 1.5vw, 1.25rem);">
     <div style="position: relative; border-radius: 1.2rem; overflow: hidden; min-height: clamp(480px, 72vh, 860px); display: flex; align-items: center;">
       <img src="assets/images/forestblur2.jpg"
            alt="Blurred forest with vertical light shafts."
@@ -78,7 +78,7 @@
   </section>
 
   <!-- ====== The wall ====== -->
-  <section class="section section--tight">
+  <section class="section section--tight section--plum">
     <div class="wrap">
       <div class="wall">
 
@@ -118,40 +118,43 @@
     </div>
   </section>
 
-  <!-- ====== Quiet image band ====== -->
-  <div class="band" style="background-image: url('assets/images/IMG_4051.jpeg'); background-position: center 50%;"></div>
-
-  <!-- ====== Submission form ====== -->
-  <section class="section section--plum">
-    <div class="narrow reveal">
-      <p class="eyebrow">Add yours</p>
-      <h2>Tell us what you have noticed and felt.</h2>
-      <p>Two or three sentences are plenty (we would rather not have to edit for brevity). Be specific — the hawk, not the bird. We read each one with care. If you let us know it's okay, we may add yours to the wall.</p>
-
-      <form class="door__form" action="#" method="post" style="margin-top: 2rem;" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Received. Thank you for trusting us with this.'; this.reset();">
-        <div>
-          <label for="story" style="color: var(--sunrise);">Your story</label>
-          <textarea id="story" name="story" required placeholder="The morning my..." ></textarea>
-        </div>
-        <div class="door__row">
+  <!-- ====== Add Yours ====== -->
+  <section style="position: relative; min-height: clamp(520px, 70vh, 900px); display: flex; align-items: center; overflow: hidden;">
+    <img src="assets/images/WhatNoticed.jpg" alt="Nature scene"
+         style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(0.88) brightness(0.72);" />
+    <div style="position: absolute; inset: 0; background: rgba(17,57,66,0.35);"></div>
+    <div class="wrap add-yours-grid" style="position: relative; z-index: 1;">
+      <div class="reveal">
+        <p class="eyebrow" style="color: rgba(255,248,238,0.8);">Add yours</p>
+        <h2 style="color: var(--sunrise); max-width: 16ch;">Tell us what you have noticed.</h2>
+        <p style="color: rgba(255,248,238,0.85); font-family: var(--sans); font-size: clamp(0.95rem,1.3vw,1.05rem); line-height: 1.7; max-width: 38ch;">Two or three sentences are plenty. Be specific — the hawk, not the bird. We read each one with care. If you let us know it's okay, we may add yours to the wall.</p>
+      </div>
+      <div class="form-box--spruce reveal">
+        <form class="door__form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Received. Thank you for trusting us with this.'; this.reset();">
           <div>
-            <label for="ally" style="color: var(--sunrise);">The ally (optional)</label>
-            <input id="ally" type="text" name="ally" placeholder="e.g. Owl, Wind, River, Stones" />
+            <label for="story">Your story</label>
+            <textarea id="story" name="story" required placeholder="The morning my..." style="min-height: 7rem;"></textarea>
           </div>
-          <div>
-            <label for="initials" style="color: var(--sunrise);">Initials &amp; place (optional)</label>
-            <input id="initials" type="text" name="initials" placeholder="e.g. L.M., Vermont" />
+          <div class="door__row">
+            <div>
+              <label for="ally">The ally (optional)</label>
+              <input id="ally" type="text" name="ally" placeholder="e.g. Owl, Wind, River, Stones" />
+            </div>
+            <div>
+              <label for="initials">Initials &amp; place (optional)</label>
+              <input id="initials" type="text" name="initials" placeholder="e.g. L.M., Vermont" />
+            </div>
           </div>
-        </div>
-        <div class="door__row">
-          <div>
-            <label for="email-s" style="color: var(--sunrise);">Your email</label>
-            <input id="email-s" type="email" name="email" required placeholder="you@somewhere.earth" />
+          <div class="door__row">
+            <div>
+              <label for="email-s">Your email</label>
+              <input id="email-s" type="email" name="email" required placeholder="you@somewhere.earth" />
+            </div>
+            <button type="submit" class="btn btn--moss">Send</button>
           </div>
-          <button type="submit" class="btn">Send</button>
-        </div>
-        <p class="door__note" style="color: rgba(255,248,238,0.8);">We'll never share your full name or email. We may write back to ask permission before publishing.</p>
-      </form>
+          <p class="door__note">We'll never share your full name or email. We may write back to ask permission before publishing.</p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -200,7 +203,7 @@
   <script>
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.05 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
 </body>

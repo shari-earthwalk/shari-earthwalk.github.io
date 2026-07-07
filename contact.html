@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=18">
+  <link rel="stylesheet" href="assets/css/style.css?v=25">
 </head>
 <body>
 
@@ -62,48 +62,54 @@
   </header>
 
   <!-- ====== Page intro ====== -->
-  <section class="page-hero" style="background-image: url('assets/images/IMG_7974.JPG');">
-    <div class="narrow reveal">
-      <p class="eyebrow">Contact</p>
-      <h1>Say hello.</h1>
-      <p class="lede">For inquiries, ideas, collaborations, or simply to be in touch, write to us. We read every note.</p>
+  <section style="background: var(--paper); padding: clamp(0.75rem, 1.5vw, 1.25rem);">
+    <div style="position: relative; border-radius: 1.2rem; overflow: hidden; min-height: clamp(480px, 72vh, 860px); display: flex; align-items: center;">
+      <img src="assets/images/SayHello.jpg" alt="Peaceful natural scene"
+           style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(0.92) brightness(0.88);" />
+      <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(17,57,66,0.62) 0%, rgba(17,57,66,0.28) 50%, transparent 75%);"></div>
+      <div style="position: relative; z-index: 1; padding: clamp(2rem, 6vw, 5.5rem) clamp(2rem, 5vw, 4rem);">
+        <p class="eyebrow" style="color: rgba(255,248,238,0.72);">Contact</p>
+        <h1 style="color: var(--sunrise); max-width: 14ch; font-size: clamp(1.9rem, 3.6vw, 3.0rem); line-height: 1.2;">Say hello.</h1>
+        <p style="font-family: var(--sans); font-size: clamp(0.95rem, 1.4vw, 1.12rem); line-height: 1.62; color: rgba(255,248,238,0.85); max-width: 40ch; margin: 0;">For inquiries, ideas, collaborations, or simply to be in touch, write to us. We read every note.</p>
+      </div>
     </div>
   </section>
 
   <!-- ====== Form + direct ====== -->
-  <section class="section section--tight">
+  <section class="section section--tight" style="background-image: url('assets/images/gradient-v3-bg.jpg'); background-size: cover; background-position: center top;">
     <div class="wrap door__inner">
       <div class="reveal">
         <p class="eyebrow">Direct</p>
         <h3 class="serif" style="font-weight: 360;">Send an email.</h3>
         <p>If you'd rather skip the form, you can reach us at:</p>
         <p class="serif italic" style="font-size: 1.2rem; color: var(--ink);"><a href="mailto:hello@rimrockandotter.com">hello@rimrockandotter.com</a></p>
-
-        <p style="margin-top: 2.5rem;" class="muted small">For virtual sessions, please use the form so we can route your note. We typically reply within a week, Monday through Friday.</p>
+        <p style="margin-top: 1.5rem;" class="muted small">For virtual sessions, please use the form so we can route your note. We typically reply within a week, Monday through Friday.</p>
       </div>
 
-      <form class="door__form reveal" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Received. Thank you. We will be in touch.'; this.reset();">
-        <div>
-          <label for="cname">Your name</label>
-          <input id="cname" type="text" required />
-        </div>
-        <div>
-          <label for="cemail">Your email</label>
-          <input id="cemail" type="email" required />
-        </div>
-        <div>
-          <label for="ctopic">What is this about?</label>
-          <input id="ctopic" type="text" placeholder="Inquiry, ideas, collaboration, hello..." />
-        </div>
-        <div>
-          <label for="cmsg">Your message</label>
-          <textarea id="cmsg" required></textarea>
-        </div>
-        <div style="display: flex; justify-content: flex-end;">
-          <button type="submit" class="btn">Send</button>
-        </div>
-        <p class="door__note"></p>
-      </form>
+      <div class="form-box--teal reveal">
+        <form class="door__form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Received. Thank you. We will be in touch.'; this.reset();">
+          <div>
+            <label for="cname">Your name</label>
+            <input id="cname" type="text" required />
+          </div>
+          <div>
+            <label for="cemail">Your email</label>
+            <input id="cemail" type="email" required />
+          </div>
+          <div>
+            <label for="ctopic">What is this about?</label>
+            <input id="ctopic" type="text" placeholder="Inquiry, ideas, collaboration, hello..." />
+          </div>
+          <div>
+            <label for="cmsg">Your message</label>
+            <textarea id="cmsg" required style="min-height: 6rem;"></textarea>
+          </div>
+          <div style="display: flex; justify-content: flex-end;">
+            <button type="submit" class="btn btn--moss">Send</button>
+          </div>
+          <p class="door__note"></p>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -152,7 +158,7 @@
   <script>
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.05 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
 </body>

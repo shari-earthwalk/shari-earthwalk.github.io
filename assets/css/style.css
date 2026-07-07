@@ -36,7 +36,10 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  overflow-x: clip; /* stops horizontal scroll/rocking on mobile without breaking sticky header */
+}
 body {
   margin: 0;
   font-family: var(--sans);
@@ -367,6 +370,60 @@ label {
   margin: 0;
 }
 
+/* ---------- Form boxes (colored containers) ---------- */
+.form-box--spruce {
+  background: var(--paper);
+  border-radius: 1.2rem;
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+.form-box--teal {
+  background: var(--moss-deep);
+  border-radius: 1.2rem;
+  padding: 1.5rem 1.75rem 1.75rem;
+}
+/* Offset for desktop two-column layouts */
+.form-box--offset { position: relative; left: -1.5rem; }
+@media (max-width: 800px) { .form-box--offset { left: 0; } }
+
+/* Two-column door inner variants */
+.door__inner--wide { grid-template-columns: 0.8fr 1.2fr; }
+@media (max-width: 800px) { .door__inner--wide { grid-template-columns: 1fr; } }
+.door__row--split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+@media (max-width: 520px) { .door__row--split { grid-template-columns: 1fr; } }
+
+/* btn--moss variant for soul green buttons */
+.btn--moss { background: var(--moss); color: var(--paper); border: none; }
+.btn--moss:hover { background: #5dd4a0; color: var(--paper); }
+
+/* Responsive two-col add-yours grid (stories page) */
+.add-yours-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+@media (max-width: 640px) {
+  .add-yours-grid { grid-template-columns: 1fr; }
+}
+
+/* Form elements inside teal boxes */
+.form-box--teal label { color: rgba(17, 57, 66, 0.72); }
+.form-box--teal input[type="email"],
+.form-box--teal input[type="text"],
+.form-box--teal textarea {
+  color: var(--paper);
+  border-bottom-color: rgba(17, 57, 66, 0.30);
+  background: transparent;
+}
+.form-box--teal input[type="email"]::placeholder,
+.form-box--teal input[type="text"]::placeholder,
+.form-box--teal textarea::placeholder { color: rgba(17, 57, 66, 0.40); }
+.form-box--teal input:focus,
+.form-box--teal textarea:focus { border-color: var(--paper); outline: none; }
+.form-box--teal .door__note { color: rgba(17, 57, 66, 0.60); }
+
 /* ---------- Page hero (interior pages with image header) ---------- */
 .page-hero {
   position: relative;
@@ -639,9 +696,9 @@ label {
 .site-footer__inner {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem 2rem;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   position: relative;
   z-index: 1;
 }
