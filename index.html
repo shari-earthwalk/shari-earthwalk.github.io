@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=27">
+  <link rel="stylesheet" href="assets/css/style.css?v=28">
 </head>
 <body>
 
@@ -92,9 +92,11 @@
 
   <!-- ====== Neuroscientist band ====== -->
   <section style="background: #113942; min-height: clamp(260px, 39vh, 450px); display: flex; align-items: center; padding: clamp(2rem, 4vw, 3rem) 1.5rem; position: relative; overflow: hidden; clip-path: inset(0);">
-    <!-- Ripple as img (not background-image) so SVG clip-paths render correctly; wider than section so rings bleed off all edges -->
-    <img src="assets/images/ripple-v1.svg" aria-hidden="true"
-         style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 130%; pointer-events: none; z-index: 0;" />
+    <!-- Ripple: wrapped in hard-clip div so iOS Safari doesn't add transform overflow to scroll width -->
+    <div style="position: absolute; inset: 0; overflow: hidden; pointer-events: none;">
+      <img src="assets/images/ripple-v1.svg" aria-hidden="true"
+           style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 130%; z-index: 0;" />
+    </div>
     <div style="position: relative; z-index: 1; max-width: 38rem; margin: 0 auto; text-align: center;">
       <p style="font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); color: var(--sunrise); margin: 0 0 1.25rem; font-weight: 500;">Can science and spirit interconnect?</p>
       <button onclick="

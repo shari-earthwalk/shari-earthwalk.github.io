@@ -40,6 +40,7 @@ html {
   -webkit-text-size-adjust: 100%;
   overflow-x: clip; /* stops horizontal scroll/rocking on mobile without breaking sticky header */
 }
+body { overflow-x: clip; } /* belt-and-suspenders for iOS Safari transformed-child overflow */
 body {
   margin: 0;
   font-family: var(--sans);
@@ -168,10 +169,10 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
          border-bottom: 1px solid var(--rule); padding: 1.5rem var(--gutter); }
   .nav.is-open { display: flex; }
   .nav-toggle {
-    display: inline-flex; flex-direction: column; gap: 4px;
-    background: none; border: 0; padding: 6px; cursor: pointer;
+    display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: 0; padding: 8px; cursor: pointer; min-height: 44px;
   }
-  .nav-toggle span { width: 22px; height: 1px; background: var(--ink); display: block; }
+  .nav-toggle span { width: 24px; height: 2px; background: var(--ink); display: block; border-radius: 1px; }
 }
 
 /* ---------- Hero (full-bleed still image with overlay) ---------- */
