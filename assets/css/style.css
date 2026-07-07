@@ -437,7 +437,7 @@ label {
 .section--teal .form-box--spruce .btn--moss:hover { background: #5dd4a0; color: var(--paper); }
 
 /* Form elements inside teal boxes */
-.form-box--teal label { color: var(--moss); }
+.form-box--teal label { color: var(--paper); }
 .form-box--teal input[type="email"],
 .form-box--teal input[type="text"],
 .form-box--teal textarea {
