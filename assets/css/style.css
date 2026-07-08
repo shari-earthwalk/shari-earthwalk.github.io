@@ -276,7 +276,8 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   max-width: 42ch;
 }
 @media (max-width: 640px) {
-  .hero { min-height: 88vh; margin: 0.75rem; }
+  .hero { min-height: 88vh; margin: 0.75rem !important; border-radius: 1.2rem !important; }
+  .hero__media, .hero::after { border-radius: 1.2rem !important; }
   .hero__inner { padding-left: 3rem; padding-right: 2rem; padding-bottom: 4rem; }
   .hero__copy { max-width: 280px; }
   .hero__tag em { display: inline; } /* flow italic inline after "spirit" on mobile */
