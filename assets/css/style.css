@@ -186,9 +186,9 @@ p { margin: 0 0 1.1em; max-width: var(--measure); }
   display: flex;
   align-items: center;
   overflow: hidden;
-  margin: clamp(0.75rem, 1.5vw, 1.25rem);
+  margin: 0.75rem !important;
   background: var(--paper);
-  border-radius: 1.2rem;
+  border-radius: 1.2rem !important;
 }
 .hero__inner {
   position: relative;
