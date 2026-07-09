@@ -54,7 +54,7 @@
       <nav class="nav">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="whats-coming.html">What's Coming</a>
+        <a href="whats-coming.html">Offerings</a>
         <a href="stories.html">Stories</a>
         <a href="contact.html" class="is-active">Contact</a>
       </nav>
@@ -77,38 +77,42 @@
 
   <!-- ====== Form + direct ====== -->
   <section class="section section--tight" style="background-image: url('assets/images/gradient-v3-bg.jpg'); background-size: cover; background-position: center top;">
-    <div class="wrap door__inner">
-      <div class="reveal" style="align-self: start;">
-        <p class="eyebrow">Direct</p>
-        <h3 class="serif" style="font-weight: 360;">Send an email.</h3>
-        <p>If you'd rather skip the form, you can reach us at:</p>
-        <p style="font-size: 1.2rem; color: var(--ink);"><a href="mailto:hello@rimrockandotter.com" style="font-family: var(--sans);">hello@rimrockandotter.com</a></p>
-        <p style="margin-top: 1.5rem;" class="muted small">For virtual sessions, please use the form so we can route your note. We typically reply within a week, Monday through Friday.</p>
-      </div>
+    <div class="wrap">
+      <div style="width: min(760px, 100%); margin-left: 0; margin-right: auto;">
+        <div class="reveal">
+          <p class="eyebrow">Direct to Shari or Kristy</p>
+          <h3 class="serif" style="font-weight: 360;">Send an email.</h3>
+        </div>
 
-      <div class="form-box--teal reveal">
-        <form class="door__form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Received. Thank you. We will be in touch.'; this.reset();">
-          <div>
-            <label for="cname">Your name</label>
-            <input id="cname" type="text" required />
-          </div>
-          <div>
-            <label for="cemail">Your email</label>
-            <input id="cemail" type="email" required />
-          </div>
-          <div>
-            <label for="ctopic">What is this about?</label>
-            <input id="ctopic" type="text" placeholder="Inquiry, ideas, collaboration, hello..." />
-          </div>
-          <div>
-            <label for="cmsg">Your message</label>
-            <textarea id="cmsg" required style="min-height: 6rem;"></textarea>
-          </div>
-          <div style="display: flex; justify-content: flex-end;">
-            <button type="submit" class="btn btn--moss">Send</button>
-          </div>
-          <p class="door__note"></p>
-        </form>
+        <div class="form-box--teal reveal" style="margin-top: 1.5rem;">
+          <form class="door__form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Received. Thank you. We will be in touch.'; this.reset();">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem;">
+              <div>
+                <label for="cname">Your name</label>
+                <input id="cname" type="text" required />
+              </div>
+              <div>
+                <label for="cemail">Your email</label>
+                <input id="cemail" type="email" required />
+              </div>
+            </div>
+            <div>
+              <label for="ctopic">What is this about?</label>
+              <input id="ctopic" type="text" placeholder="Inquiry, ideas, collaboration, hello..." />
+            </div>
+            <div class="door__row" style="align-items: end;">
+              <div>
+                <label for="cmsg">Your message</label>
+                <textarea id="cmsg" required style="min-height: 4rem;"></textarea>
+              </div>
+              <button type="submit" class="btn btn--moss">Send</button>
+            </div>
+            <p class="door__note" style="margin: 0;"></p>
+          </form>
+        </div>
+
+        <p class="muted small reveal" style="margin-top: 1.25rem;">If you'd rather skip the form, you can reach us here: <a href="/cdn-cgi/l/email-protection#4b232e2727240b392226392428202a252f243f3f2e3965282426"><span class="__cf_email__" data-cfemail="e28a878e8e8da2908b8f908d8189838c868d96968790cc818d8f">[email&#160;protected]</span></a></p>
+        <p class="muted small reveal">For virtual sessions, please use the form so we can route your note. We typically reply within a week, Monday through Friday.</p>
       </div>
     </div>
   </section>
@@ -155,7 +159,7 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
     }, { threshold: 0.05 });
