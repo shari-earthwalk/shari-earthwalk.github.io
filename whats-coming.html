@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=38">
+<script src="image-slot.js"></script>
 </head>
 <body>
 
@@ -70,7 +71,7 @@
       <div style="position: relative; z-index: 1; padding: clamp(2rem, 6vw, 5.5rem) clamp(2rem, 5vw, 4rem);">
         <p class="eyebrow" style="color: rgba(255,248,238,0.72);">What we offer</p>
         <h1 style="color: var(--sunrise); max-width: 14ch; font-size: clamp(1.9rem, 3.6vw, 3.0rem); line-height: 1.2;">A map back to the enchantment you were born with.</h1>
-        <p style="font-family: var(--sans); font-size: clamp(0.95rem, 1.4vw, 1.12rem); line-height: 1.62; color: rgba(255,248,238,0.85); max-width: 40ch; margin: 0;">We’re actively building experiences and products — ways to deepen your intuition, heighten your awareness of signs, spark your spirit, and help you see yourself as part of nature. All of these are critical to the planet and wildkind.</p>
+        <p style="font-family: var(--sans); font-size: clamp(0.95rem, 1.4vw, 1.12rem); line-height: 1.62; color: rgba(255,248,238,0.85); max-width: 40ch; margin: 0;">We’re actively building experiences and products — ways to deepen your intuition, heighten your awareness of signs, spark your spirit, and help you see yourself as part of nature.</p>
       </div>
     </div>
   </section>
@@ -96,8 +97,8 @@
           </svg>
           <div class="pillar__rule" style="opacity: 0.75; background: var(--moss);"></div>
           <h3>Virtual group sessions</h3>
-          <p>Come together, feel the energy, and discover ways to start rebuilding or strengthening your relationship with wildlife and nature. Spirit allies are here for you — in, on, and around the Earth.</p>
-          <p class="offering__status" style="margin-top: 1.25rem;">In planning</p>
+          <p>Come together, build community, feel the energy, and discover ways to strengthen your relationship with wildlife and nature.</p>
+          <p class="offering__status" style="margin-top: 1.25rem;">Coming this fall</p>
         </div>
 
         <div class="pillar reveal">
@@ -107,8 +108,8 @@
           </svg>
           <div class="pillar__rule" style="opacity: 0.75; background: var(--moss);"></div>
           <h3>The podcast</h3>
-          <p>Give yourself some minutes to take in awe-inspiring conversations about genuine, interconnected experiences people have had with nature and wildlife, and the impact they've had.</p>
-          <p class="offering__status" style="margin-top: 1.25rem;">In development</p>
+          <p>Give yourself some minutes to take in consciousness-expanding conversations about genuine, interconnected experiences people have had.</p>
+          <p class="offering__status" style="margin-top: 1.25rem;">Coming this winter</p>
         </div>
 
         <div class="pillar reveal">
@@ -123,9 +124,35 @@
           <div class="pillar__rule" style="opacity: 0.75; background: var(--moss);"></div>
           <h3>Card deck</h3>
           <p>Use this tangible interconnection tool, grounded in animism, to renew your innate ability to recognize signs from earth spirits and interpret their meaning in the context of your life.</p>
-          <p class="offering__status" style="margin-top: 1.25rem;">In ideation</p>
+          <p class="offering__status" style="margin-top: 1.25rem;">In development</p>
+          <button onclick="
+            var s = document.getElementById('card-peek');
+            var b = this;
+            if (s.style.maxHeight === '0px' || s.style.maxHeight === '') {
+              s.style.maxHeight = s.scrollHeight + 'px';
+              s.style.opacity = '1';
+              s.style.marginTop = '1.25rem';
+              b.textContent = 'Close';
+            } else {
+              s.style.maxHeight = '0px';
+              s.style.opacity = '0';
+              s.style.marginTop = '0';
+              b.textContent = 'Peek';
+            }
+          " style="background: var(--sunrise); border: none; color: var(--paper); font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6em 1.6em; cursor: pointer; border-radius: 2rem; margin-top: 1.25rem; transition: background 0.2s;">Peek</button>
         </div>
 
+      </div>
+
+      <div id="card-peek" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.6s ease, opacity 0.5s ease, margin-top 0.3s ease; margin-top: 0;">
+        <div style="display: flex; gap: clamp(0.75rem, 2vw, 1.5rem); flex-wrap: wrap; justify-content: center; padding-top: 0.5rem;">
+          <image-slot id="card-peek-1" src="assets/images/card-1.jpg" style="width: clamp(90px, 12vw, 150px); height: clamp(150px, 20vw, 250px);" shape="rounded" radius="10" placeholder="Card 1"></image-slot>
+          <image-slot id="card-peek-2" src="assets/images/card-2.jpg" style="width: clamp(90px, 12vw, 150px); height: clamp(150px, 20vw, 250px);" shape="rounded" radius="10" placeholder="Card 2"></image-slot>
+          <image-slot id="card-peek-3" src="assets/images/card-3.jpg" style="width: clamp(90px, 12vw, 150px); height: clamp(150px, 20vw, 250px);" shape="rounded" radius="10" placeholder="Card 3"></image-slot>
+          <image-slot id="card-peek-4" src="assets/images/card-4.jpg" style="width: clamp(90px, 12vw, 150px); height: clamp(150px, 20vw, 250px);" shape="rounded" radius="10" placeholder="Card 4"></image-slot>
+          <image-slot id="card-peek-5" src="assets/images/card-5.jpg" style="width: clamp(90px, 12vw, 150px); height: clamp(150px, 20vw, 250px);" shape="rounded" radius="10" placeholder="Card 5"></image-slot>
+          <image-slot id="card-peek-6" src="assets/images/card-6.jpg" style="width: clamp(90px, 12vw, 150px); height: clamp(150px, 20vw, 250px);" shape="rounded" radius="10" placeholder="Card 6"></image-slot>
+        </div>
       </div>
     </div>
   </section>
