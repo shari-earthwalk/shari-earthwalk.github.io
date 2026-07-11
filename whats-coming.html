@@ -218,6 +218,31 @@
   </section>
 
 
+  <!-- ====== Merch teaser ====== -->
+  <section class="section" style="background-image: url('assets/images/gradient-v3-bg.jpg'); background-size: cover; background-position: center; text-align: center;">
+    <div class="wrap">
+      <div class="narrow center reveal">
+        <p class="eyebrow">Embody it</p>
+        <h2>Merch is on the way.</h2>
+        <p>Wearables carrying the spirit of Rimrock &amp; Otter, coming soon.</p>
+        <button onclick="
+          var p = document.getElementById('merch-peek');
+          var open = p.style.maxHeight && p.style.maxHeight !== '0px';
+          p.style.maxHeight = open ? '0' : '520px';
+          p.style.opacity = open ? '0' : '1';
+          p.style.marginTop = open ? '0' : '2rem';
+          this.textContent = open ? 'Merch' : 'Close';
+        " style="background: var(--paper); border: none; color: var(--spruce); font-family: var(--sans); font-size: 0.88rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.7em 1.8em; cursor: pointer; border-radius: 2rem; transition: background 0.2s;">Merch</button>
+
+        <div id="merch-peek" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.6s ease, opacity 0.5s ease, margin-top 0.3s ease; margin-top: 0; border-radius: 0.5rem;">
+          <div style="background-image: url('assets/images/gradient-v4.png'); background-size: cover; background-position: center; border-radius: 0.5rem; padding: clamp(2rem, 4vw, 2.75rem) 1.5rem; display: flex; align-items: center; justify-content: center;">
+            <span class="offering__status">In development</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="wrap site-footer__inner">
       <a href="index.html" class="brand"><svg class="brand__logo" viewBox="0 0 1500 158.18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
