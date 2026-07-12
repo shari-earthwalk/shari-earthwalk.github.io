@@ -201,15 +201,21 @@
         <p>If something has you leaning in, please leave your name. We'll reach out as soon as something new is launched.</p>
       </div>
       <div class="form-box--spruce reveal">
-        <form class="door__form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Thank you. Your name is here.'; this.querySelector('input').value='';">
+        <form class="door__form" action="https://formspree.io/f/mgogwbbl" method="POST" onsubmit="
+          event.preventDefault();
+          var f = this, note = f.querySelector('.door__note');
+          fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+            .then(function (r) { if (r.ok) { note.textContent = 'Thank you. Your name is here.'; f.reset(); } else { note.textContent = 'Something went wrong. Please try again.'; } })
+            .catch(function () { note.textContent = 'Something went wrong. Please try again.'; });
+        ">
           <div>
             <label for="email">Your email</label>
-            <input id="email" type="email" required placeholder="you@somewhere.earth" />
+            <input id="email" type="email" name="email" required placeholder="you@somewhere.earth" />
           </div>
           <div class="door__row">
             <div>
               <label for="name">Your first name (optional)</label>
-              <input id="name" type="text" placeholder="" />
+              <input id="name" type="text" name="name" placeholder="" />
             </div>
             <button type="submit" class="btn btn--moss">Tune in</button>
           </div>

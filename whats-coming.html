@@ -199,15 +199,21 @@
         <p style="color: var(--sunrise);">If something has you leaning in, the best thing you can do is leave your name. We'll let you know when an offering is ready. No noise.</p>
       </div>
       <div class="form-box--teal reveal" style="position: relative; z-index: 1;">
-        <form class="door__form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Thank you. Your name is here.'; this.querySelector('input').value='';">
+        <form class="door__form" action="https://formspree.io/f/mgogwbbl" method="POST" onsubmit="
+          event.preventDefault();
+          var f = this, note = f.querySelector('.door__note');
+          fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+            .then(function (r) { if (r.ok) { note.textContent = 'Thank you. Your name is here.'; f.reset(); } else { note.textContent = 'Something went wrong. Please try again.'; } })
+            .catch(function () { note.textContent = 'Something went wrong. Please try again.'; });
+        ">
           <div>
             <label for="wc-email">Your email</label>
-            <input id="wc-email" type="email" required placeholder="you@somewhere.earth" />
+            <input id="wc-email" type="email" name="email" required placeholder="you@somewhere.earth" />
           </div>
           <div class="door__row">
             <div>
               <label for="wc-name">Your first name (optional)</label>
-              <input id="wc-name" type="text" placeholder="" />
+              <input id="wc-name" type="text" name="name" placeholder="" />
             </div>
             <button type="submit" class="btn btn--moss">Tune in</button>
           </div>

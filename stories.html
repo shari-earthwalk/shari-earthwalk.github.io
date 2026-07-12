@@ -130,7 +130,13 @@
         <p style="color: rgba(255,248,238,0.85); font-family: var(--sans); font-size: clamp(0.95rem,1.3vw,1.05rem); line-height: 1.7; max-width: 38ch;">We read each one with care and may add yours to the wall if you let us know it’s okay by checking the box. We can only post 2-3 sentences, so if you share more, please include a condensed version (2-3 sentences), or we will edit it before posting.</p>
       </div>
       <div class="form-box--spruce reveal">
-        <form class="door__form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Received. Thank you for trusting us with this.'; this.reset();">
+        <form class="door__form" action="https://formspree.io/f/mgogwbbl" method="POST" onsubmit="
+          event.preventDefault();
+          var f = this, note = f.querySelector('.door__note');
+          fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+            .then(function (r) { if (r.ok) { note.textContent = 'Received. Thank you for trusting us with this.'; f.reset(); } else { note.textContent = 'Something went wrong. Please try again.'; } })
+            .catch(function () { note.textContent = 'Something went wrong. Please try again.'; });
+        ">
           <div>
             <label for="story" style="color: var(--sunrise);">Your story</label>
             <textarea id="story" name="story" required placeholder="The morning my..." style="min-height: 7rem;"></textarea>

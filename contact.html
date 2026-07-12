@@ -89,25 +89,31 @@
             <img src="assets/images/ermine-peek.png" alt="" aria-hidden="true" style="position: absolute; bottom: 0; right: 0; width: 100%; height: auto; transform: translateY(45%); display: block;" />
           </div>
           <div class="form-box--teal reveal" style="margin-top: 1.5rem; position: relative; z-index: 1;">
-          <form class="door__form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.door__note').textContent = 'Received. Thank you. We will be in touch.'; this.reset();">
+          <form class="door__form" action="https://formspree.io/f/mgogwbbl" method="POST" onsubmit="
+            event.preventDefault();
+            var f = this, note = f.querySelector('.door__note');
+            fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+              .then(function (r) { if (r.ok) { note.textContent = 'Received. Thank you. We will be in touch.'; f.reset(); } else { note.textContent = 'Something went wrong. Please try again.'; } })
+              .catch(function () { note.textContent = 'Something went wrong. Please try again.'; });
+          ">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem;">
               <div>
                 <label for="cname">Your name</label>
-                <input id="cname" type="text" required />
+                <input id="cname" type="text" name="name" required />
               </div>
               <div>
                 <label for="cemail">Your email</label>
-                <input id="cemail" type="email" required />
+                <input id="cemail" type="email" name="email" required />
               </div>
             </div>
             <div>
               <label for="ctopic">What is this about?</label>
-              <input id="ctopic" type="text" placeholder="Inquiry, ideas, collaboration, hello..." />
+              <input id="ctopic" type="text" name="topic" placeholder="Inquiry, ideas, collaboration, hello..." />
             </div>
             <div class="door__row" style="align-items: end;">
               <div>
                 <label for="cmsg">Your message</label>
-                <textarea id="cmsg" required style="min-height: 4rem;"></textarea>
+                <textarea id="cmsg" name="message" required style="min-height: 4rem;"></textarea>
               </div>
               <button type="submit" class="btn btn--moss">Send</button>
             </div>
@@ -116,7 +122,7 @@
           </div>
         </div>
 
-        <p class="muted small reveal" style="margin-top: 1.25rem;">If you'd rather skip the form, you can reach us here: <a href="/cdn-cgi/l/email-protection#1b737e7777745b697276697478707a757f746f6f7e6935787476"><span class="__cf_email__" data-cfemail="234b464f4f4c63514a4e514c4048424d474c575746510d404c4e">[email&#160;protected]</span></a></p>
+        <p class="muted small reveal" style="margin-top: 1.25rem;">If you'd rather skip the form, you can reach us here: <a href="/cdn-cgi/l/email-protection#48202d242427083a21253a272b2329262c273c3c2d3a662b2725"><span class="__cf_email__" data-cfemail="90f8f5fcfcffd0e2f9fde2fff3fbf1fef4ffe4e4f5e2bef3fffd">[email&#160;protected]</span></a></p>
         <p class="muted small reveal">For virtual sessions, please use the form so we can route your note. We typically reply within a week, Monday through Friday.</p>
       </div>
     </div>
