@@ -203,13 +203,14 @@
           event.preventDefault();
           var f = this, note = f.querySelector('.door__note');
           fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
-            .then(function (r) { if (r.ok) { note.textContent = 'Thank you. Your name is here.'; f.reset(); } else { note.textContent = 'Something went wrong. Please try again.'; } })
+            .then(function (r) { if (r.ok) { window.showFormThanks('Thank you. Your name is here.'); f.reset(); } else { note.textContent = 'Something went wrong. Please try again.'; } })
             .catch(function () { note.textContent = 'Something went wrong. Please try again.'; });
         ">
           <div>
             <label for="wc-email">Your email</label>
             <input id="wc-email" type="email" name="email" required placeholder="you@somewhere.earth" />
           </div>
+          <input type="hidden" name="_subject" value="[Email list] New waitlist signup — Rimrock & Otter" />
           <div class="door__row">
             <div>
               <label for="wc-name">Your first name (optional)</label>
@@ -290,6 +291,20 @@
       <small>&copy; 2026 Rimrock & Otter, LLC</small>
     </div>
   </footer>
+
+  <!-- ====== Form confirmation modal ====== -->
+  <div id="form-thanks-modal" style="display: none; position: fixed; inset: 0; z-index: 999; align-items: center; justify-content: center; background: rgba(17,57,66,0.55); padding: 1.5rem;">
+    <div style="background: var(--paper); border-radius: 1rem; max-width: 24rem; width: 100%; padding: clamp(1.75rem, 4vw, 2.5rem); text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.35);">
+      <p id="form-thanks-text" style="font-family: var(--serif); font-size: 1.15rem; color: var(--spruce); line-height: 1.6; margin: 0 0 1.5rem;"></p>
+      <button onclick="document.getElementById('form-thanks-modal').style.display='none';" style="background: var(--moss); border: none; color: var(--paper); font-family: var(--sans); font-size: 0.88rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.7em 2.2em; cursor: pointer; border-radius: 2rem;">Okay</button>
+    </div>
+  </div>
+  <script>
+    window.showFormThanks = function (msg) {
+      document.getElementById('form-thanks-text').textContent = msg;
+      document.getElementById('form-thanks-modal').style.display = 'flex';
+    };
+  </script>
 
   <script>
     const io = new IntersectionObserver((entries) => {
