@@ -41,7 +41,11 @@
       <h1 style="color: var(--moss); font-size: clamp(1.8rem, 4.5vw, 2.4rem); line-height: 1.2; margin: 0 0 0.9rem;">Lean forward.</h1>
       <p style="font-family: var(--sans); color: rgba(255,248,238,0.85); font-size: 1.05rem; line-height: 1.6; margin: 0 0 2rem;">Virtual group sessions, a podcast, an interconnection card deck — all to begin. Leave your name and we'll reach out when something new is ready for you.</p>
 
-      <div class="form-box--teal" style="text-align: left;">
+      <div style="position: relative;">
+        <div style="position: absolute; left: -26%; top: -3.2rem; width: 50%; z-index: 0; pointer-events: none;">
+          <img src="../assets/images/ermine-peek.png" alt="" aria-hidden="true" style="width: 100%; height: auto; display: block;" />
+        </div>
+        <div class="form-box--teal" style="text-align: left; position: relative; z-index: 1;">
         <form class="door__form" action="https://formspree.io/f/mgogwbbl" method="POST" onsubmit="
           event.preventDefault();
           var f = this, note = f.querySelector('.door__note');
@@ -63,6 +67,7 @@
           </div>
           <p class="door__note">No pressure. Unsubscribe whenever you'd like.</p>
         </form>
+        </div>
       </div>
     </div>
   </main>
