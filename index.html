@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=38">
+  <script src="mailchimp-subscribe.js"></script>
 </head>
 <body>
 
@@ -204,9 +205,18 @@
         <form class="door__form" action="https://formspree.io/f/mgogwbbl" method="POST" onsubmit="
           event.preventDefault();
           var f = this, note = f.querySelector('.door__note');
-          fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
-            .then(function (r) { if (r.ok) { window.showFormThanks('Thank you. Your name is here.'); f.reset(); } else { note.textContent = 'Something went wrong. Please try again.'; } })
-            .catch(function () { note.textContent = 'Something went wrong. Please try again.'; });
+          var email = f.querySelector('[name=&quot;email&quot;]').value;
+          var fname = f.querySelector('[name=&quot;name&quot;]').value;
+          window.subscribeToMailchimp(email, fname).then(function (data) {
+            if (data && data.result === 'success') {
+              window.showFormThanks('Thank you. Your name is here.');
+              f.reset();
+            } else {
+              note.textContent = 'Something went wrong. Please try again.';
+            }
+          }).catch(function () {
+            note.textContent = 'Something went wrong. Please try again.';
+          });
         ">
           <div>
             <label for="email">Your email</label>
