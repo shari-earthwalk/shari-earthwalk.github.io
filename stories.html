@@ -129,7 +129,7 @@
           event.preventDefault();
           var f = this, note = f.querySelector('.door__note');
           fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
-            .then(function (r) { if (r.ok) { window.showFormThanks('Received. Thank you for trusting us with this.'); f.reset(); } else { note.textContent = 'Something went wrong. Please try again.'; } })
+            .then(function (r) { if (r.ok) { window.showFormThanks('Thank you for sharing!'); f.reset(); } else { note.textContent = 'Something went wrong. Please try again.'; } })
             .catch(function () { note.textContent = 'Something went wrong. Please try again.'; });
         ">
           <input type="hidden" name="_subject" value="[Story submission] New story — Rimrock & Otter" />

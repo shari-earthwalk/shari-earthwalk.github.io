@@ -97,7 +97,7 @@
               ? '[Virtual sessions] New contact message — Rimrock & Otter'
               : '[Contact] New message — Rimrock & Otter';
             fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
-              .then(function (r) { if (r.ok) { window.showFormThanks('Received. Thank you. We will be in touch.'); f.reset(); } else { note.textContent = 'Something went wrong. Please try again.'; } })
+              .then(function (r) { if (r.ok) { window.showFormThanks('Thank you for the message!'); f.reset(); } else { note.textContent = 'Something went wrong. Please try again.'; } })
               .catch(function () { note.textContent = 'Something went wrong. Please try again.'; });
           ">
             <input type="hidden" name="_subject" value="[Contact] New message — Rimrock & Otter" />

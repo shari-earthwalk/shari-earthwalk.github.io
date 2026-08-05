@@ -209,7 +209,7 @@
           var fname = f.querySelector('[name=&quot;name&quot;]').value;
           window.subscribeToMailchimp(email, fname).then(function (data) {
             if (data && data.result === 'success') {
-              window.showFormThanks('Thank you. Your name is here.');
+              window.showFormThanks('Thank you for connecting!');
               f.reset();
             } else {
               note.textContent = 'Something went wrong. Please try again.';
