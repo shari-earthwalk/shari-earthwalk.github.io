@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Share your story — Rimrock & Otter</title>
+  <meta name="description" content="Share a sign, an encounter, or a moment of wonder with a nature ally. We read each one with care." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=38">
+</head>
+<body>
+
+  <main style="min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 2rem 1.25rem;">
+    <img src="assets/images/WhatNoticed.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(0.88) brightness(0.72);" />
+    <div style="position: absolute; inset: 0; background: rgba(17,57,66,0.35);"></div>
+    <div style="position: relative; z-index: 1; max-width: 30rem; width: 100%; text-align: center;">
+      <a href="index.html" style="display: inline-block; margin-bottom: 2rem; border-bottom: none;"><img src="assets/images/logo-sky-full-cream.png" alt="Rimrock &amp; Otter" style="display: block; height: 70px; width: auto;" /></a>
+
+      <h1 style="color: var(--moss); font-size: clamp(1.8rem, 4.5vw, 2.4rem); line-height: 1.2; margin: 0 0 0.9rem;">Share what you’ve noticed and felt.</h1>
+      <p style="font-family: var(--sans); color: rgba(255,248,238,0.85); font-size: 1.05rem; line-height: 1.6; margin: 0 0 2rem;">We read each one with care and may add yours to the wall if you let us know it’s okay by checking the box. We can only post 2-3 sentences, so if you share more, please include a condensed version (2-3 sentences), or we will edit it before posting.</p>
+
+      <div class="form-box--spruce" style="text-align: left;">
+        <form class="door__form" action="https://formspree.io/f/mgogwbbl" method="POST" onsubmit="
+          event.preventDefault();
+          var f = this, note = f.querySelector('.door__note');
+          fetch(f.action, { method: 'POST', body: new FormData(f), headers: { 'Accept': 'application/json' } })
+            .then(function (r) { if (r.ok) { window.showFormThanks('Thank you for sharing!'); f.reset(); var cb = f.querySelector('[name=&quot;can-post&quot;]'); cb.style.backgroundColor = 'transparent'; cb.style.backgroundImage = 'none'; } else { note.textContent = 'Something went wrong. Please try again.'; } })
+            .catch(function () { note.textContent = 'Something went wrong. Please try again.'; });
+        ">
+          <input type="hidden" name="_subject" value="[Story submission] New story — Rimrock & Otter (share page)" />
+          <div>
+            <label for="story" style="color: var(--sunrise);">Your story</label>
+            <textarea id="story" name="story" required placeholder="The morning my..." style="min-height: 7rem;"></textarea>
+          </div>
+          <div class="door__row">
+            <div>
+              <label for="ally">The nature spirit (optional)</label>
+              <input id="ally" type="text" name="ally" placeholder="e.g. Owl, Wind, River, Stones" />
+            </div>
+            <div>
+              <label for="initials">Initials &amp; place (optional)</label>
+              <input id="initials" type="text" name="initials" placeholder="e.g. L.M., Vermont" />
+            </div>
+          </div>
+          <div class="door__row">
+            <div>
+              <label for="email-s">Your email</label>
+              <input id="email-s" type="email" name="email" required placeholder="you@somewhere.earth" />
+            </div>
+          </div>
+          <label style="display: flex; align-items: flex-start; gap: 0.6rem; text-transform: none; letter-spacing: normal; font-family: var(--sans); font-size: 0.92rem; color: var(--sunrise);">
+            <input type="checkbox" name="can-post" onchange="this.style.backgroundColor = this.checked ? '#fff8ee' : 'transparent'; this.style.backgroundImage = this.checked ? 'url(\'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Cpath d=%27M3.5 8.5l3 3 6-7%27 fill=%27none%27 stroke=%27%23113942%27 stroke-width=%272.2%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E\')' : 'none';" style="-webkit-appearance: none; appearance: none; width: 1.1rem; height: 1.1rem; border: 1.5px solid #fff8ee; border-radius: 0.2rem; background-color: transparent; background-size: 100% 100%; flex-shrink: 0; margin: 0.2em 0 0 0; padding: 0; cursor: pointer;" />
+            It’s okay to post my story, trimming and rephrasing it if necessary.
+          </label>
+          <button type="submit" class="btn btn--moss">Send</button>
+          <p class="door__note">We'll never share your full name or email.</p>
+        </form>
+      </div>
+
+      <a href="stories.html" style="display: inline-block; margin-top: 1.75rem; font-family: var(--sans); font-size: 0.92rem; color: rgba(255,248,238,0.85);">Read stories others have shared</a>
+    </div>
+  </main>
+
+  <!-- ====== Form confirmation modal ====== -->
+  <div id="form-thanks-modal" style="display: none; position: fixed; inset: 0; z-index: 999; align-items: center; justify-content: center; background: rgba(17,57,66,0.55); padding: 1.5rem;">
+    <div style="background: var(--paper); border-radius: 1rem; max-width: 24rem; width: 100%; padding: clamp(1.75rem, 4vw, 2.5rem); text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.35);">
+      <p id="form-thanks-text" style="font-family: var(--serif); font-size: 1.15rem; color: var(--spruce); line-height: 1.6; margin: 0 0 1.5rem;"></p>
+      <button onclick="document.getElementById('form-thanks-modal').style.display='none';" style="background: var(--moss); border: none; color: var(--paper); font-family: var(--sans); font-size: 0.88rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.7em 2.2em; cursor: pointer; border-radius: 2rem;">Okay</button>
+    </div>
+  </div>
+  <script>
+    window.showFormThanks = function (msg) {
+      document.getElementById('form-thanks-text').textContent = msg;
+      document.getElementById('form-thanks-modal').style.display = 'flex';
+    };
+  </script>
+</body>
+</html>
